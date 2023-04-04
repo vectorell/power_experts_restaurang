@@ -4,8 +4,8 @@ import Dish from "./Dish.jsx"
 function Varukorg() {
 
     const dishes = [
-        {name: 'Tortellini', description: 'Ptjao.. en form av pasta', price: 175},
-        {name: 'Tortellini', description: 'Ptjao.. en form av pasta', price: 175},
+        {name: 'Tortellini', description: 'Ptjao.. en form av pasta', price: 175, imgSource: 'https://static.mathem.se/shared/images/recipes/doublelarge/kramig-tortellini-med-gronkal-och-rostade-mandlar-foto-nurlan-mathem.jpeg'},
+        {name: 'Tortellini', description: 'Ptjao.. en form av pasta', price: 175, imgSource: 'https://static.mathem.se/shared/images/recipes/doublelarge/kramig-tortellini-med-gronkal-och-rostade-mandlar-foto-nurlan-mathem.jpeg'},
         {name: 'Köttbullar', description: 'skitgoda köttbullar', price: 12}
     ]
 
@@ -16,8 +16,9 @@ function Varukorg() {
 
             {/* Maträtterna som valts */}
             <div className="dishes">
-                <Dish name={'Tortellini'} description={'Ptjao.. en form av pasta'} price={175} imgSource={'https://static.mathem.se/shared/images/recipes/doublelarge/kramig-tortellini-med-gronkal-och-rostade-mandlar-foto-nurlan-mathem.jpeg'}/>
-                <Dish name={'Tortellini'} description={'Ptjao.. en form av pasta'} price={175} imgSource={'https://static.mathem.se/shared/images/recipes/doublelarge/kramig-tortellini-med-gronkal-och-rostade-mandlar-foto-nurlan-mathem.jpeg'}/>
+                {dishes.map((dish, index) => (
+                    <Dish key={index} name={dish.name} description={dish.description} price={dish.price} imgSource={dish.imgSource} />
+                ))}
             </div>
 
             {/* Summa + Knapp (gå vidare) */}

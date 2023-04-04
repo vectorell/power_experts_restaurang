@@ -9,6 +9,7 @@ function Dish({ name, description, price, imgSource }) {
                 <p> {description} </p>
                 <p> {price}:- </p>
             </div>
+            <img className="close-icon" src="./src/assets/close.png"/>
         </div>
     )
 }
