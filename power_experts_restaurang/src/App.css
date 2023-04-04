@@ -7,14 +7,3 @@
 body {
   height: 100vh;
 }
-
-.container_varukorg {
-  width: 80%;
-  height: 80%;
-  border: 1px solid gray;
-  padding: 1em;
-}
-
-.varukorg-dish {
-  border: 1px dashed blue;
-}
