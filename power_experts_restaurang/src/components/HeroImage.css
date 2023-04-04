@@ -1,0 +1,13 @@
+
+.hero-image{
+	display:flex;
+	justify-content: center;
+	width: 100vw;
+}
+
+.menu-button{
+	font-family: Gilda Display;
+	padding: 0.5em 1em;
+	background-color: var(--orange);
+	
+}
