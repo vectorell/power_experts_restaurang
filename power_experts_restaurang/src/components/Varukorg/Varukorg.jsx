@@ -2,7 +2,6 @@ import Dish from "./Dish.jsx"
 
 
 function Varukorg() {
-
     const dishes = [
         {name: 'Tortellini', description: 'Ptjao.. en form av pasta', price: 175, imgSource: 'https://static.mathem.se/shared/images/recipes/doublelarge/kramig-tortellini-med-gronkal-och-rostade-mandlar-foto-nurlan-mathem.jpeg'},
         {name: 'Tortellini', description: 'Ptjao.. en form av pasta', price: 175, imgSource: 'https://static.mathem.se/shared/images/recipes/doublelarge/kramig-tortellini-med-gronkal-och-rostade-mandlar-foto-nurlan-mathem.jpeg'},
@@ -13,7 +12,6 @@ function Varukorg() {
 
     return (
         <div className="container_varukorg">
-
             {/* Maträtterna som valts */}
             <div className="dishes">
                 {dishes.map((dish, index) => (
