@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Varukorg from './components/Varukorg/Varukorg'
+import Varukorg from './components/Varukorg'
 import './base.css'
 
 function App() {
