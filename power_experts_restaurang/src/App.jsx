@@ -3,6 +3,7 @@ import './App.css'
 import OpeningHours from './components/OpeningHours'
 import HeroImage from './components/HeroImage'
 import './base.css'
+import Varukorg from './components/Varukorg'
 
 function App() {
 
@@ -11,8 +12,8 @@ function App() {
       <div className='landing-page'>
         <HeroImage/>
         <OpeningHours/>
+        <Varukorg />
       </div>
-
     </div>
   )
 }
