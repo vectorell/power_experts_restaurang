@@ -4,7 +4,7 @@ import Dish from "./Dish.jsx"
 
 
 function Varukorg() {
-    const foodItems = useContext(ContextProvider) 
+    const {foodItems} = useContext(ContextProvider) 
 
     // TO DO: Koppla ihop med valda maträtter från menyn
     // Just nu är det bara exempelrätter för testning av komponenten.

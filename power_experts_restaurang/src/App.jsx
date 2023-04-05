@@ -13,8 +13,13 @@ export const ContextProvider = React.createContext()
 
 function App() {
 
+  // Globala variabler/arrayer osv
+  const contextValues = {
+    foodItems,
+  }
+
   return (
-    <ContextProvider.Provider value={foodItems}>
+    <ContextProvider.Provider value={contextValues}>
 
       <div className="App">
         <div className='landing-page'>
