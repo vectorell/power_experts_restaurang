@@ -26,7 +26,10 @@ function Varukorg() {
 
             {/* Maträtterna som valts */}
             <div className="dishes">
-                {dishes.map((dish, index) => (
+                {
+                    dishes.length === 0 ? <p className="empty-cart"> Kundvagnen är tom. </p>
+                    : (
+                dishes.map((dish, index) => (
                     <Dish 
                         key={index} 
                         name={dish.name} 
@@ -34,7 +37,7 @@ function Varukorg() {
                         price={dish.price} 
                         onRemove={ () => handleRemoveDish(index)}
                     />
-                ))}
+                )))}
             </div>
 
             {/* Summa + Knapp (gå vidare) */}
