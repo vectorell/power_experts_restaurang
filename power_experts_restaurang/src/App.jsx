@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import './App.css'
+import './base.css'
 import OpeningHours from './components/OpeningHours'
 import HeroImage from './components/HeroImage'
-import './base.css'
+import Varukorg from './components/Varukorg'
+
 
 function App() {
 
@@ -12,7 +14,7 @@ function App() {
         <HeroImage/>
         <OpeningHours/>
       </div>
-
+      <Varukorg/>
     </div>
   )
 }
