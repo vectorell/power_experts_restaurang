@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+
+:root{
+	--orange:#F39C4B;
+	--background-gray: #3D3D3D;
+	--offwhite: #D9D9D9;
+	--border-radius: 0.3em;
+	--bodytext-font: Glass Antiqua;
+	--heading-font: Gilda Display;
+	--fontXlarge: 48px;
+	--fontLarge: 32px;
+	--fontMedium: 24px;
+	--fontSmall: 20px;
+	--fontXsmall: 16px;
+}
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.App{
+	background-color:var(--background-gray) ;
+	height: 100vh;
+}
+
+button{
+	font-family: var(--heading-font);
+	padding: 0.5em 1em;
+	border-radius: var(--border-radius);
+	border: none;
+	background-color: var(--orange);
+	
+}
