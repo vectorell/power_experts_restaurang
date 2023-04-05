@@ -4,7 +4,6 @@ import Varukorg from './components/Varukorg/Varukorg'
 import './base.css'
 
 function App() {
-  const test = 123
 
   return (
       <div className="App">
