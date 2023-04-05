@@ -1,13 +1,22 @@
 import { useState } from 'react'
 import './App.css'
+import './base.css'
 import Header from './components/Header'
+import OpeningHours from './components/OpeningHours'
+import HeroImage from './components/HeroImage'
+import Varukorg from './components/Varukorg'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-    <Header/>
+      <Header/>
+      <div className='landing-page'>
+        <HeroImage/>
+        <OpeningHours/>
+      </div>
+      <Varukorg/>
     </div>
   )
 }

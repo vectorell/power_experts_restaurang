@@ -1,7 +1,12 @@
 .header{
 	display: flex;
-	justify-content: flex-end;
+	align-items: flex-start;
 	width:100vw;
+	
 	background-color: var(--background-grey);
 
+}
+
+.fa-solid{
+	color: var(--offwhite)
 }

@@ -8,7 +8,7 @@ return(
 
 	<section className='header'>
 		<img src="src\components\images\logo-no-background 1.svg" alt="Företagslogga Feast & Fare" />
-		<FontAwesomeIcon icon = {faCartShopping}/>
+		<FontAwesomeIcon icon = {faCartShopping} className='cart'/>
 		<FontAwesomeIcon icon = {faBars}/>
 
 	</section>

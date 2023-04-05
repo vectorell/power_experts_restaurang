@@ -1,0 +1,124 @@
+/* Yttersta diven (den vita) */
+.container_varukorg {
+  text-align: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  background-color: var(--offwhite);
+  font-family: var(--heading-font);
+}
+
+.container_varukorg > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Diven som wrappar alla individuella maträttsdivar */
+.dishes {
+  width: 100%;
+  margin-bottom: 2em;
+}
+    
+/* Varje individuell maträttsdiv */
+.varukorg-dish {
+  border: 2px solid rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+  width: 70%;
+  min-width: 15em;
+  max-width: 25em;
+  padding: 1em;
+  box-shadow: 2px 5px 5px rgba(132, 132, 132, 0.197);
+  position: relative;
+  row-gap: 1em;
+}
+
+/* Texten för maträttsnamnet */
+.dish-name {
+  font-size: var(--fontLarge);
+  font-weight: 600;
+}
+/* Texten för maträttsbeskrivningen */
+.dish-description {
+  font-size: var(--fontMedium);
+}
+
+/* Texten för maträttspriset */
+.dish-price {
+  font-size: var(--fontMedium);
+}
+
+/* "Gå vidare"-knappen */
+.btn-confirm {
+  border-radius: var(--border-radius);
+  padding: 0.5em;
+  width: 10em;
+  background-color: var(--orange);
+  border: none;
+  transition: 0.2s;
+  font-size: var(--fontSmall);
+}
+
+/* "Gå vidare"-knappen vid HOVER */
+.btn-confirm:hover {
+  transition: 0.2s;
+  transform: scale(103%);
+  cursor: pointer;
+}
+
+/* "Gå vidare"-knappen vid MUSKLICK*/
+.btn-confirm:active {
+  transition: 0s;
+  background-color: #cf7520;
+}
+
+/* Texten för totalsumma */
+.total-sum {
+  font-weight: 500;
+  font-size: var(--fontLarge);
+  margin-bottom: 1em;
+}
+
+/* Kryssknappen för varje individuell maträttsdiv */
+.close-icon {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+}
+
+.close-icon:hover {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Text för tom kundvagn */
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+  width: 70%;
+  max-width: 25em;
+  padding: 1em;
+  row-gap: 1em;
+  font-size: var(--fontMedium);
+}
+
+@media (max-width: 500px) {
+  .container_varukorg {
+    width: 100%;
+  }
+
+  .varukorg-dish {
+    min-width: 14em;
+  }
+}
