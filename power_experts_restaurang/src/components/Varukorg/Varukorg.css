@@ -1,89 +1,108 @@
+/* Yttersta diven (den vita) */
 .container_varukorg {
-    width: 80%;
-    height: 80%;
-    border: 1px solid gray;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: white;
-  }
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  background-color: white;
+}
 
-  .container_varukorg > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.container_varukorg > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Diven som wrappar alla individuella maträttsdivar */
+.dishes {
+  width: 100%;
+  margin-bottom: 2em;
+}
     
+/* Varje individuell maträttsdiv */
+.varukorg-dish {
+  border: 2px solid rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+  width: 70%;
+  min-width: 15em;
+  max-width: 25em;
+  padding: 1em;
+  box-shadow: 2px 5px 5px rgba(132, 132, 132, 0.197);
+  position: relative;
+  row-gap: 1em;
+}
+
+/* Texten för maträttsnamnet */
+.dish-name {
+  font-size: 32px;
+  font-weight: 600;
+}
+/* Texten för maträttsbeskrivningen */
+.dish-description {
+  font-size: 24px;
+}
+
+/* Texten för maträttspriset */
+.dish-price {
+  font-size: 24px;
+}
+
+/* "Gå vidare"-knappen */
+.btn-confirm {
+  border-radius: 0.3em;
+  padding: 0.5em 1em;
+  background-color: var(--orange);
+  border: none;
+  transition: 0.2s;
+  font-size: 20px;
+}
+
+/* "Gå vidare"-knappen vid HOVER */
+.btn-confirm:hover {
+  transition: 0.2s;
+  transform: scale(103%);
+  cursor: pointer;
+}
+
+/* "Gå vidare"-knappen vid MUSKLICK*/
+.btn-confirm:active {
+  transition: 0s;
+  background-color: #cf7520;
+}
+
+/* Texten för totalsumma */
+.total-sum {
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 1em;
+}
+
+/* Kryssknappen för varje individuell maträttsdiv */
+.close-icon {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+
+.close-icon:hover {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+@media (max-width: 500px) {
+  .container_varukorg {
+    width: 100%;
+  }
+
   .varukorg-dish {
-    border: 2px solid black;
-    display: flex;
-    margin-bottom: 1em;
-    max-width: 70%;
-    min-width: 20em;
-    padding: 1em;
-    box-shadow: 2px 2px 2px rgba(132, 132, 132, 0.197);
-    position: relative;
+    min-width: 15em;
   }
-  
-  .varukorg-dish-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 1em;
-  }
-  
-  .image-dish-small {
-    width: 20%;
-    height: 20%;
-  }
-
-  .btn-confirm {
-    padding: 0.5em;
-    width: 10em;
-    margin-top: 1em;
-    background-color: var(--orange);
-    border: none;
-    transition: 0.2s;
-  }
-
-  .btn-confirm:hover {
-    transition: 0.2s;
-    transform: scale(103%);
-    cursor: pointer;
-  }
-
-  .btn-confirm:active {
-    transition: 0s;
-    background-color: #cf7520;
-  }
-
-  .total-sum {
-    font-weight: 500;
-  }
-
-  .close-icon {
-    width: 16px;
-    height: 16px;
-    border: 1px solid rgba(0, 0, 0, 0);
-    position: absolute;
-    right: 1em;
-    top: 1em;
-  }
-
-  .close-icon:hover {
-    cursor: pointer;
-    transition: 0.2s;
-  }
-
-  @media (max-width: 500px) {
-    .container_varukorg {
-      width: 100%;
-    }
-
-    .varukorg-dish {
-      min-width: 15em;
-    }
-  }
+}
