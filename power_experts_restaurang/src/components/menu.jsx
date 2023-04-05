@@ -37,6 +37,7 @@ const MenuItems = () => {
 
 	return (
 		<div className="menu-container">
+			<img src="../src/components/menu-img/logo.png" alt="loggo" className="logo" />
 			<h1 className="menu-header">Meny</h1>
 			{foodItems.map(foodItem => (
 				<Menu
