@@ -6,19 +6,19 @@ function Varukorg() {
 
     // TO DO: Koppla ihop med valda maträtter från menyn
     // Just nu är det bara exempelrätter för testning av komponenten.
-    const [dishes, setDishes] = useState([
+    const [selectedDishes, setSelectedDishes] = useState([
         {name: 'Tortellini', description: 'Ptjao.. en form av pasta', price: 175},
         {name: 'Pasta Alfredo', description: 'En annan form av pasta', price: 165},
     ])
 
     // Räknar ut prissumman av rätterna
-    const totalSum = dishes.reduce((acc, dish) => acc + dish.price, 0)
+    const totalSum = selectedDishes.reduce((acc, dish) => acc + dish.price, 0)
 
     // Funktion för att välja bort en rätt
     function handleRemoveDish(index) {
-        const newDishes = [...dishes]
-        newDishes.splice(index, 1)
-        setDishes(newDishes)
+        const newSelectedDishes = [...selectedDishes]
+        newSelectedDishes.splice(index, 1)
+        setSelectedDishes(newSelectedDishes)
     }
 
     return (
@@ -27,9 +27,9 @@ function Varukorg() {
             {/* Maträtterna som valts */}
             <div className="dishes">
                 {
-                    dishes.length === 0 ? <p className="empty-cart"> Kundvagnen är tom. </p>
+                    selectedDishes.length === 0 ? <p className="empty-cart"> Kundvagnen är tom. </p>
                     : (
-                dishes.map((dish, index) => (
+                selectedDishes.map((dish, index) => (
                     <Dish 
                         key={index} 
                         name={dish.name} 
