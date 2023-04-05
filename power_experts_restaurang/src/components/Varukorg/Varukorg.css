@@ -1,12 +1,14 @@
 /* Yttersta diven (den vita) */
 .container_varukorg {
+  text-align: center;
   width: 80%;
   display: flex;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
-  background-color: white;
+  background-color: var(--offwhite);
+  font-family: var(--heading-font);
 }
 
 .container_varukorg > div {
@@ -39,27 +41,28 @@
 
 /* Texten för maträttsnamnet */
 .dish-name {
-  font-size: 32px;
+  font-size: var(--fontLarge);
   font-weight: 600;
 }
 /* Texten för maträttsbeskrivningen */
 .dish-description {
-  font-size: 24px;
+  font-size: var(--fontMedium);
 }
 
 /* Texten för maträttspriset */
 .dish-price {
-  font-size: 24px;
+  font-size: var(--fontMedium);
 }
 
 /* "Gå vidare"-knappen */
 .btn-confirm {
-  border-radius: 0.3em;
-  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+  padding: 0.5em;
+  width: 10em;
   background-color: var(--orange);
   border: none;
   transition: 0.2s;
-  font-size: 20px;
+  font-size: var(--fontSmall);
 }
 
 /* "Gå vidare"-knappen vid HOVER */
@@ -78,7 +81,7 @@
 /* Texten för totalsumma */
 .total-sum {
   font-weight: 500;
-  font-size: 30px;
+  font-size: var(--fontLarge);
   margin-bottom: 1em;
 }
 
