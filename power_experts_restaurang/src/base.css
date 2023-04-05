@@ -21,9 +21,9 @@
 	box-sizing: border-box;
 }
 
-.App{
+body{
 	background-color:var(--background-gray) ;
-	height: 100vh;
+	height: 100%;
 }
 
 button{
