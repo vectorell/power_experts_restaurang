@@ -11,20 +11,30 @@
 }
 
 .menu-button{
-	font-family: Gilda Display;
-	font-size: var(--fontmedium);
-	padding: 0.5em 1em;
-	border-radius: 0.3em;
-	width: 8em;
-	border: none;
 	position: absolute;
-	background-color: var(--orange);
-	
-	
 }
 
 .hero-image{
 	width:100%;
+	height: auto;
+}
 
-height: auto;
+
+/* tablet */
+@media (min-width:481px) and (max-width:768px) {
+
+}
+
+/* laptop, small screens */
+
+@media (min-width:769px) and (max-width:1024px){
+	.menu-button{
+		position:none;
+	}
+}
+
+
+/* desktop, larger screens */
+@media (min-width:1025px){
+	
 }

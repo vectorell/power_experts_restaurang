@@ -21,10 +21,11 @@
 	box-sizing: border-box;
 }
 
-.App{
-	background-color:var(--background-gray) ;
-	height: 100vh;
+body{
+	height: 100%;
+	background-color: var(--background-gray);
 }
+
 
 button{
 	font-family: var(--heading-font);
