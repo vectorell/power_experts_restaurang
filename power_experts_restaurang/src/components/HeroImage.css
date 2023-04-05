@@ -1,15 +1,30 @@
 
-.hero-image{
+.hero-image-container{
 	display:flex;
+	flex-direction: column;
 	justify-content: center;
-	width: 100vw;
+	align-items: center;
+	position:relative;
+	width:100vw;
+	max-width: 800px;
+	margin: 0 auto  2em;
 }
 
 .menu-button{
 	font-family: Gilda Display;
+	font-size: var(--fontmedium);
 	padding: 0.5em 1em;
 	border-radius: 0.3em;
+	width: 8em;
 	border: none;
+	position: absolute;
 	background-color: var(--orange);
 	
+	
+}
+
+.hero-image{
+	width:100%;
+
+height: auto;
 }
