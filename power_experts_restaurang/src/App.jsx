@@ -1,14 +1,19 @@
 import { useState } from 'react'
 import './App.css'
-import Varukorg from './components/Varukorg'
+import OpeningHours from './components/OpeningHours'
+import HeroImage from './components/HeroImage'
 import './base.css'
 
 function App() {
 
   return (
-      <div className="App">
-        <Varukorg />
+    <div className="App">
+      <div className='landing-page'>
+        <HeroImage/>
+        <OpeningHours/>
       </div>
+
+    </div>
   )
 }
 
