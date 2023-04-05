@@ -20,7 +20,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	margin: 1em 0 1em 0;
+	margin: 1.5em 0 1.5em 0;
 	width: 272px;
 	padding: 0.5em;
 	height: 24em;
@@ -29,6 +29,7 @@ body {
 .food-img {
 	width: 16em;
 	border-radius: 0.3em;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 h1 {
 	color: var(--orange);

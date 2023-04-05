@@ -4,15 +4,20 @@ function Menu({image, name, description, price}) {
 			<img src={image} alt={name} className="food-img" />
 			<h2 className="name-of-food">{name}</h2>
 			<p className="price">{price}</p>
-			<p className="ingredients"><span className="innehåll">Innehåll:</span> {description}</p>
+			{description ? (
+            <p className="ingredients">
+            <span className="innehåll">Innehåll:</span> {description}
+            </p> 
+		    ) : null}
 			<button className="menu-btn">Lägg till</button>
 			</div>
+
 	)
 }
 
 
 const MenuItems = () => {
-	const menuItems = [
+	const foodItems = [
 		{ id: 0, image: '../src/components/menu-img/carbonara.jpg', name: 'Pasta Carbonara', price: '179:-', description: 'Bacon, parmesan, ägg, olivolja, salt, peppar'},
 		{ id: 1, image: '../src/components/menu-img/kycklingpasta.jpg', name: 'Krämig kycklingpasta', price: '179:-', description: 'Kyckling, paprika, lök, grädde, cream cheese, salt, peppar, paprikapulver, basilika'},
 		{ id: 2, image: '../src/components/menu-img/vegetarisk-pasta.jpg', name: 'Vegetarisk pasta bolognese med blomkål', price: '179:-', description: 'Brun champinjon, blomkål, lök, chili, tomat, parmesan, salt, peppar'},
@@ -25,22 +30,28 @@ const MenuItems = () => {
 		{ id: 9, image: '../src/components/menu-img/kycklingburgare.jpg', name: 'Pulled kycklingburgare', price: '179:-', description: 'Kyckling, äppelmust, bbq-sås, vitlök, farinsocker, spiskummin, chilipulver, fänkålsfrön, salt, peppar'},
 		{ id: 10, image: '../src/components/menu-img/älgburgare.jpg', name: 'Älgburgare', price: '199:-', description: 'Älgfärs, bacon, dijonsenap, ägg, grädde, lök, salt, peppar, timjan, rårörda lingon, gräddfil'},
 		{ id: 11, image: '../src/components/menu-img/vegburgare.jpg', name: 'Halloumiburgare', price: '179:-', description: 'Halloumi, sötpotatis, kikärtor, lök, chili, paprikapulver, spiskummin, salt, peppar'},
-	]
+		{ id: 12, image: '../src/components/menu-img/coca cola.jpg', name: 'Coca-cola', price: '30:-'},
+		{ id: 13, image: '../src/components/menu-img/fanta.jpg', name: 'Fanta', price: '30:-'},
+		{ id: 14, image: '../src/components/menu-img/sprite.jpg', name: 'Sprite', price: '30:-'}
+	];
 
 	return (
 		<div className="menu-container">
 			<h1 className="menu-header">Meny</h1>
-			{menuItems.map(menuItem => (
+			{foodItems.map(foodItem => (
 				<Menu
-					key={menuItem.id}
-					image={menuItem.image}
-					name={menuItem.name}
-					price={menuItem.price}
-					description={menuItem.description}
+					key={foodItem.id}
+					image={foodItem.image}
+					name={foodItem.name}
+					price={foodItem.price}
+					description={foodItem.description}
 				/>
-			))}
+			))
+			}
 		</div>
 	);
+
 }
 
 export default MenuItems
+ 
