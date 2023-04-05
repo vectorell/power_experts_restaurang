@@ -8,6 +8,8 @@
 	width:100vw;
 	max-width: 800px;
 	margin: 0 auto  2em;
+	padding-bottom: 4em;
+
 }
 
 .menu-button{
@@ -16,7 +18,7 @@
 
 .hero-image{
 	width:100%;
-	height: auto;
+	height: 80%;
 }
 
 
@@ -29,12 +31,16 @@
 
 @media (min-width:769px) and (max-width:1024px){
 	.menu-button{
-		position:none;
+
+	 bottom:0;
 	}
 }
 
 
 /* desktop, larger screens */
 @media (min-width:1025px){
+	.menu-button{
+
+		bottom:0;
 	
 }
