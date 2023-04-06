@@ -49,7 +49,6 @@ function App() {
 
     <div className="main-container">
       {showMenu && <MenuItems items={foodItems}/>}
-    {/* <MenuItems items={foodItems}/> */}
     </div>
     </ContextProvider.Provider>
   )
