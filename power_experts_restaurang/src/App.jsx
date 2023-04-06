@@ -4,6 +4,7 @@ import { createContext } from 'react'
 import { useContext } from 'react'
 import './App.css'
 import './base.css'
+import Header from './components/Header'
 import OpeningHours from './components/OpeningHours'
 import HeroImage from './components/HeroImage'
 import Varukorg from './components/Varukorg'
@@ -29,6 +30,7 @@ function App() {
     <ContextProvider.Provider value={contextValues}>
 
       <div className="App">
+        <Header/>
         <div className='landing-page'>
           <HeroImage/>
           <OpeningHours/>
