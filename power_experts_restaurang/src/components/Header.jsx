@@ -1,6 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -26,16 +24,16 @@ return(
 
 		<div className="header-mobile">
 			<img src="src\components\images\logo-no-background 1.svg" alt="Företagslogga Feast & Fare" onClick={onClickHome}/>
-			<FontAwesomeIcon icon = {faShoppingBasket } className='bars fa-lg'/>
-			<FontAwesomeIcon icon = {faCartShopping} className='cart fa-lg' onClick={OnClickCart}/>
-			<FontAwesomeIcon icon = {faBars} className='bars fa-lg' onClick={OnClickBars}/>
+			<FontAwesomeIcon icon = {faShoppingBasket} className='cart fa-lg' onClick={OnClickCart} aria-label='Varukorg'/>
+			<FontAwesomeIcon icon = {faBars} className='bars fa-lg' onClick={OnClickBars} aria-label='Öppna menyval'/>
 		</div>
+
 		<div className='header-desktop'>
-		<img src="src\components\images\logo-no-background 1.svg" alt="Företagslogga Feast & Fare" onClick={onClickHome} className="logo-desktop"/>
+		<img src="src\components\images\logo-no-background 1.svg" alt="Företagslogga Feast & Fare" onClick={onClickHome} className="logo"/>
 			<p> Till menyn</p>
 			<p>Personal</p>
 				<div className="phone">
-					<FontAwesomeIcon icon = {faPhone}/>
+					<FontAwesomeIcon icon = {faPhone} className="phone-icon fa-lg"/>
 					<p>0700-202020</p>
 				</div>
 			</div>
