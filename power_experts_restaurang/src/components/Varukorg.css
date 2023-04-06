@@ -63,6 +63,7 @@
   border: none;
   transition: 0.2s;
   font-size: var(--fontSmall);
+  margin: 1em;
 }
 
 /* "Gå vidare"-knappen vid HOVER */

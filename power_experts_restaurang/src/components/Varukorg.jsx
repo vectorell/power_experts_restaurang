@@ -6,6 +6,7 @@ import { useEffect } from "react"
 function Varukorg() {
     const {selectedFoodItems} = useContext(ContextProvider) 
     const {setSelectedFoodItems} = useContext(ContextProvider)
+    const dataFromParent = useContext(ContextProvider)
     // TO DO: Koppla ihop med valda maträtter från menyn
     // Just nu är det bara exempelrätter för testning av komponenten.
     const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems)
@@ -48,7 +49,20 @@ function Varukorg() {
             {/* Summa + Knapp (gå vidare) */}
             <div>
                 <h2 className="total-sum"> Totalsumma: {totalSum}:- </h2>
-                <button className="btn-confirm"> Gå vidare </button>
+                <div className="button-div">
+
+                    <button className="btn-confirm" onClick={() => {
+                        dataFromParent.setShowVarukorg(false)
+                        dataFromParent.setShowMenu(true)
+                    }}> Tillbaka till menyn </button>
+                    <button className="btn-confirm"onClick={() => {
+
+                        // Ställ in vilken vy som ska visas här!
+                        // exempel: 
+                        // dataFromParent.setShowOrderConfirmation
+
+                    }}> Gå vidare </button>
+                </div>
             </div>
 
         </div>
