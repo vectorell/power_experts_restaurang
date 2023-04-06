@@ -72,13 +72,17 @@ body {
 }
 
 .menu-btn {
-	background-color: var(--orange);
+	/* background-color: var(--orange); */
 	border-style: none;
 	padding: 0.5em 1em;
 	border-radius: 0.3em;
 	font-size: 16px;
 	font-weight: bold;
-	margin-top: 1em;
+	margin: 1em 0em;
+	transition: all 0.3s ease;
+}
+.menu-btn:hover {
+	box-shadow: 0 0 0 2px rgb(0, 0, 0); /* lägg till en box-shadow-effekt för att skapa en ram runt knappen */
 }
 
 .innehåll {
@@ -98,6 +102,10 @@ body {
 	font-size: var(--fontSmall);
 	font-weight: 600;
 	min-width: 9em;
+	transition: all 0.3s ease;
+}
+.btn-forward:hover{
+	box-shadow: 0 0 0 2px rgb(0, 0, 0); 
 }
 
 @media screen and (min-width: 850px) and (max-width: 1250px) {
