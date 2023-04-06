@@ -6,11 +6,11 @@ import './Header.css'
 
 const Header = () => {
 
-const OnClickCart =() =>{
+const onClickCart =() =>{
 	console.log('jag klickade på varukorg');
 }
 
-const OnClickBars =() =>{
+const onClickBars =() =>{
 	console.log('jag klickade på hamurgare');
 }
 
@@ -18,24 +18,34 @@ const onClickHome = () => {
 	console.log('jag vill hem!');
 }
 
+const onClickMenu = () => {
+	console.log('Jag vill se menyn');
+}
+
+const onClickLogin = () => {
+	console.log('personal login');
+}
+
 return(
 
 	<section className='header'>
 
 		<div className="header-mobile">
-			<img src="src\components\images\logo-no-background 1.svg" alt="Företagslogga Feast & Fare" onClick={onClickHome}/>
-			<FontAwesomeIcon icon = {faShoppingBasket} className='cart fa-lg' onClick={OnClickCart} aria-label='Varukorg'/>
-			<FontAwesomeIcon icon = {faBars} className='bars fa-lg' onClick={OnClickBars} aria-label='Öppna menyval'/>
+			<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome}className="header-logo "/>
+			<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-mobile fa-lg' onClick={onClickCart} aria-label='Varukorg'/>
+			<FontAwesomeIcon icon = {faBars} className='bars fa-lg' onClick={onClickBars} aria-label='Öppna menyval'/>
 		</div>
 
 		<div className='header-desktop'>
-		<img src="src\components\images\logo-no-background 1.svg" alt="Företagslogga Feast & Fare" onClick={onClickHome} className="header-logo"/>
-			<p> Till menyn</p>
-			<p>Personal</p>
+		<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome} className="header-logo "/>
+			<p onClick ={onClickMenu} className='link'> Till menyn</p>
+			<p onClick={onClickLogin} className="link">Personal</p>
 				<div className="phone">
-					<FontAwesomeIcon icon = {faPhone} className="phone-icon fa-lg"/>
+					<FontAwesomeIcon icon = {faPhone} className="phone-icon "/>
 					<p>0700-202020</p>
 				</div>
+			<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-desktop link fa-lg' onClick={onClickCart} aria-label='Varukorg'/>
+
 			</div>
 	</section>
 )
