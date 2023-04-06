@@ -1,7 +1,7 @@
 /* Yttersta diven (den vita) */
 .container_varukorg {
   text-align: center;
-  width: 80%;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -114,11 +114,21 @@
 }
 
 @media (max-width: 500px) {
-  .container_varukorg {
-    width: 100%;
-  }
 
   .varukorg-dish {
-    min-width: 14em;
+    min-width: 12em;
   }
+
+  .dish-name {
+  font-size: var(--fontMedium);
+}
+/* Texten för maträttsbeskrivningen */
+.dish-description {
+  font-size: var(--fontSmall);
+}
+
+/* Texten för maträttspriset */
+.dish-price {
+  font-size: var(--fontSmall);
+}
 }
