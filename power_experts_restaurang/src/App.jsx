@@ -16,10 +16,13 @@ import MenuItems from './components/menu'
 import drinkItems from './components/menu'
 
 function App() {
+  const [selectedFoodItems, setSelectedFoodItems] = useState([])
 
   // Globala variabler/arrayer osv
   const contextValues = {
     foodItems,
+    selectedFoodItems,
+    setSelectedFoodItems
   }
 
   return (

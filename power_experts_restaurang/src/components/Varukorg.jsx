@@ -1,23 +1,29 @@
 import { useContext, useState } from "react"
-import { ContextProvider } from "../App.jsx"
-import Dish from "./Dish.jsx"
-
+import { ContextProvider } from "../App"
+import Dish from "./Dish"
+import { useEffect } from "react"
 
 function Varukorg() {
-    const {foodItems} = useContext(ContextProvider) 
-
+    const {selectedFoodItems} = useContext(ContextProvider) 
+    const {setSelectedFoodItems} = useContext(ContextProvider)
     // TO DO: Koppla ihop med valda maträtter från menyn
     // Just nu är det bara exempelrätter för testning av komponenten.
-    const [selectedDishes, setSelectedDishes] = useState(foodItems)
+    const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems)
 
+    useEffect(() => {
+        setSelectedDishes(selectedFoodItems);
+      }, [selectedFoodItems]);
+    
+
+    
     // Räknar ut prissumman av rätterna
     const totalSum = selectedDishes.reduce((acc, dish) => acc + dish.price, 0)
 
     // Funktion för att välja bort en rätt
     function handleRemoveDish(index) {
-        const newSelectedDishes = [...selectedDishes]
+        const newSelectedDishes = [...selectedFoodItems]
         newSelectedDishes.splice(index, 1)
-        setSelectedDishes(newSelectedDishes)
+        setSelectedFoodItems(newSelectedDishes)
     }
 
     return (
@@ -50,3 +56,5 @@ function Varukorg() {
 }
 
 export default Varukorg
+
+
