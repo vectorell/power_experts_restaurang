@@ -18,12 +18,21 @@ import drinkItems from './components/menu'
 
 function App() {
   const [selectedFoodItems, setSelectedFoodItems] = useState([])
+  const [showLandingPage, setShowLandingPage] = useState(true)
+  const [showVarukorg, setShowVarukorg] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
 
   // Globala variabler/arrayer osv
   const contextValues = {
     foodItems,
     selectedFoodItems,
-    setSelectedFoodItems
+    setSelectedFoodItems,
+    showLandingPage,
+    setShowLandingPage,
+    showVarukorg,
+    setShowVarukorg,
+    showMenu,
+    setShowMenu,
   }
 
   return (
@@ -32,14 +41,15 @@ function App() {
       <div className="App">
         <Header/>
         <div className='landing-page'>
-          <HeroImage/>
-          <OpeningHours/>
+          {showLandingPage && <HeroImage/>}
+          {showLandingPage && <OpeningHours/>}
         </div>
-        <Varukorg/>
+        {showVarukorg && <Varukorg/>}
       </div>
 
     <div className="main-container">
-    <MenuItems items={foodItems}/>
+      {showMenu && <MenuItems items={foodItems}/>}
+    {/* <MenuItems items={foodItems}/> */}
     </div>
     </ContextProvider.Provider>
   )

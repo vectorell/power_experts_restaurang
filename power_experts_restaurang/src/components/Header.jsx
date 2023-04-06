@@ -3,20 +3,26 @@ import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import './Header.css'
+import { useContext } from "react";
+import { ContextProvider } from "../App";
 
 const Header = () => {
+	const dataFromParent = useContext(ContextProvider)
 
-const onClickCart =() =>{
-	console.log('jag klickade på varukorg');
-}
+	const onClickCart =() =>{
+		console.log('jag klickade på varukorg');
+	}
 
-const onClickBars =() =>{
-	console.log('jag klickade på hamurgare');
-}
+	const onClickBars =() =>{
+		console.log('jag klickade på hamurgare');
+	}
 
-const onClickHome = () => {
-	console.log('jag vill hem!');
-}
+	const onClickHome = () => {
+		console.log('jag vill hem!');
+		dataFromParent.setShowLandingPage(true)
+		dataFromParent.setShowMenu(false)
+		dataFromParent.setShowVarukorg(false)
+	}
 
 const onClickMenu = () => {
 	console.log('Jag vill se menyn');
@@ -28,7 +34,7 @@ const onClickLogin = () => {
 
 return(
 
-	<section className='header'>
+		<section className='header'>
 
 		<div className="header-mobile">
 			<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome}className="header-logo "/>
@@ -47,8 +53,9 @@ return(
 			<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-desktop link fa-lg' onClick={onClickCart} aria-label='Varukorg'/>
 
 			</div>
-	</section>
-)
+
+		</section>
+	)
 
 }
 

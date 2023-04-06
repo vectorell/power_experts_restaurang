@@ -92,6 +92,14 @@ body {
 	grid-column: 1/3;
 }
 
+.btn-forward {
+	grid-column: 2;
+	margin-bottom: 3em;
+	font-size: var(--fontSmall);
+	font-weight: 600;
+	min-width: 9em;
+}
+
 @media screen and (min-width: 850px) and (max-width: 1250px) {
 	.menu-container {
 		display: grid;

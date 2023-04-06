@@ -3,6 +3,7 @@ import { ContextProvider } from "../App";
 
 function Menu({ items }) {
   const { selectedFoodItems, setSelectedFoodItems } = useContext(ContextProvider);
+  const dataFromParent = useContext(ContextProvider)
 
   const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems);
 
@@ -15,8 +16,12 @@ function Menu({ items }) {
   }
 
   return (
-    <div className="menu-container">
-      <img src="../src/components/menu-img/logo.png" alt="loggo" className="logo" />
+	  <div className="menu-container">
+	  <img src="../src/components/menu-img/logo.png" alt="loggo" className="logo" onClick={() => {
+				dataFromParent.setShowLandingPage(true)
+				dataFromParent.setShowMenu(false)
+				dataFromParent.setShowVarukorg(false)
+	  }}/>
       <h1 className="menu-header">Meny</h1>
       {items.map((foodItem) => (
         <div key={foodItem.id} className="dish-container">
@@ -33,6 +38,10 @@ function Menu({ items }) {
           </button>
         </div>
       ))}
+	  <button onClick={ () => {
+		dataFromParent.setShowMenu(false)
+		dataFromParent.setShowVarukorg(true)
+	  }} className="btn-forward"> Till varukorgen </button>
     </div>
   );
 }
