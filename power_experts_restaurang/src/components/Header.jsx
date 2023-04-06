@@ -23,19 +23,21 @@ return(
 	<section className='header'>
 
 		<div className="header-mobile">
-			<img src="src\components\images\logo-no-background 1.svg" alt="Företagslogga Feast & Fare" onClick={onClickHome}/>
-			<FontAwesomeIcon icon = {faShoppingBasket} className='cart fa-lg' onClick={OnClickCart} aria-label='Varukorg'/>
+			<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome}className="header-logo"/>
+			<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-mobile fa-lg' onClick={OnClickCart} aria-label='Varukorg'/>
 			<FontAwesomeIcon icon = {faBars} className='bars fa-lg' onClick={OnClickBars} aria-label='Öppna menyval'/>
 		</div>
 
 		<div className='header-desktop'>
-		<img src="src\components\images\logo-no-background 1.svg" alt="Företagslogga Feast & Fare" onClick={onClickHome} className="header-logo"/>
+		<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome} className="header-logo"/>
 			<p> Till menyn</p>
 			<p>Personal</p>
 				<div className="phone">
-					<FontAwesomeIcon icon = {faPhone} className="phone-icon fa-lg"/>
+					<FontAwesomeIcon icon = {faPhone} className="phone-icon "/>
 					<p>0700-202020</p>
 				</div>
+			<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-desktop fa-lg' onClick={OnClickCart} aria-label='Varukorg'/>
+
 			</div>
 	</section>
 )
