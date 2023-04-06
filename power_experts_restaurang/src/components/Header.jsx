@@ -29,7 +29,7 @@ return(
 		</div>
 
 		<div className='header-desktop'>
-		<img src="src\components\images\logo-no-background 1.svg" alt="Företagslogga Feast & Fare" onClick={onClickHome} className="logo"/>
+		<img src="src\components\images\logo-no-background 1.svg" alt="Företagslogga Feast & Fare" onClick={onClickHome} className="header-logo"/>
 			<p> Till menyn</p>
 			<p>Personal</p>
 				<div className="phone">
