@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ContextProvider } from "../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -6,8 +6,7 @@ import './hamburgerOverlay.css'
 
 
 const HamburgerOverlay = () => {
-	const dataFromParent = useContext(ContextProvider)
- 
+
 	const onClickMenu = () => {
 		console.log('Jag vill se menyn');
 		dataFromParent.setShowLandingPage(false)

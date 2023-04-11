@@ -9,7 +9,7 @@ import OpeningHours from './components/OpeningHours'
 import HeroImage from './components/HeroImage'
 import Varukorg from './components/Varukorg'
 import foodItems from './assets/foodItems'
-import HamburgerOverlay from './components/HamburgerOverlay'
+
 
 export const ContextProvider = React.createContext()
 import '../src/components/menu.css'
@@ -21,7 +21,7 @@ function App() {
 	const [showLandingPage, setShowLandingPage] = useState(true)
 	const [showVarukorg, setShowVarukorg] = useState(false)
 	const [showMenu, setShowMenu] = useState(false)
-	const [ showHamburgerOverlay, setShowHamburgerOverlay] = useState(false)
+	
 
 	// Globala variabler/arrayer osv
 	const contextValues = {
@@ -34,8 +34,6 @@ function App() {
 		setShowVarukorg,
 		showMenu,
 		setShowMenu,
-		showHamburgerOverlay,
-		setShowHamburgerOverlay,
 	}
 
 	return (
@@ -43,7 +41,6 @@ function App() {
 
 		<div className="App">
 			<Header/>
-			{showHamburgerOverlay && <HamburgerOverlay/>}
 
 			<div className='landing-page'>
 			{showLandingPage && <HeroImage/>}
