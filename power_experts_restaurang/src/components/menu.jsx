@@ -27,7 +27,7 @@ function Menu({ items }) {
         <div key={foodItem.id} className="dish-container">
           <img src={foodItem.image} alt={foodItem.name} className="food-img" />
           <h2 className="name-of-food">{foodItem.name}</h2>
-          <p className="price">{foodItem.price}</p>
+          <p className="price">{foodItem.price}:-</p>
           {foodItem.description ? (
             <p className="ingredients">
               <span className="innehåll">Innehåll:</span> {foodItem.description}
