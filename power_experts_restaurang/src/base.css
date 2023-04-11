@@ -29,9 +29,7 @@ body{
 }
 
 /* Ta bort scrollbar, Chrome, Safari and Opera */
-body::-webkit-scrollbar {
-	display: none;
-}
+body::-webkit-scrollbar { display: none; }
 
 
 button{

@@ -4,11 +4,11 @@ import Dish from "./Dish"
 import { useEffect } from "react"
 
 function Varukorg() {
+    
     const {selectedFoodItems} = useContext(ContextProvider) 
     const {setSelectedFoodItems} = useContext(ContextProvider)
     const dataFromParent = useContext(ContextProvider)
-    // TO DO: Koppla ihop med valda maträtter från menyn
-    // Just nu är det bara exempelrätter för testning av komponenten.
+
     const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems)
 
     useEffect(() => {

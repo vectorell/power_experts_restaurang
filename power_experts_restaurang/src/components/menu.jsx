@@ -8,7 +8,6 @@ function Menu({ items }) {
   const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems);
 
   function handleClick(foodItem) {
-	console.log('test')
 	console.log(selectedFoodItems)
     const selectedFoodItem = items.find((item) => item.id === foodItem.id);
     setSelectedFoodItems([...selectedFoodItems, selectedFoodItem]);
