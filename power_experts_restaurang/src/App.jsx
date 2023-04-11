@@ -1,7 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
-import { createContext } from 'react'
-import { useContext } from 'react'
+import { useState, createContext, useContext } from 'react'
 import './App.css'
 import './base.css'
 import Header from './components/Header'
@@ -22,6 +20,21 @@ function App() {
   const [showVarukorg, setShowVarukorg] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
 
+  function navigateTo(page) {
+    const pages = [
+      {name: 'landing', variable: "setShowLandingPage"},
+      {name: 'menu', variable: "setShowMenu"},
+      {name: 'varukorg', variable: "setShowVarukorg"}
+    ]
+
+    pages.forEach((p) => {
+      // om inparameter är 'menu', så blir p.name med 'menu' true.
+      let showPage = (p.name === page)
+      const setStateFunction = contextValues[p.variable]
+      setStateFunction(showPage)
+    })
+  }
+
   // Globala variabler/arrayer osv
   const contextValues = {
     foodItems,
@@ -33,6 +46,7 @@ function App() {
     setShowVarukorg,
     showMenu,
     setShowMenu,
+    navigateTo,
   }
 
   return (

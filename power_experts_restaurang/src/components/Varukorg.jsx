@@ -1,14 +1,13 @@
-import { useContext, useState } from "react"
 import { ContextProvider } from "../App"
+import { useContext, useState, useEffect } from "react"
 import Dish from "./Dish"
-import { useEffect } from "react"
 
 function Varukorg() {
     
     const {selectedFoodItems} = useContext(ContextProvider) 
     const {setSelectedFoodItems} = useContext(ContextProvider)
     const dataFromParent = useContext(ContextProvider)
-
+    const {navigateTo} = useContext(ContextProvider)
     const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems)
 
     useEffect(() => {
@@ -51,15 +50,14 @@ function Varukorg() {
                 <h2 className="total-sum"> Totalsumma: {totalSum}:- </h2>
                 <div className="button-div">
 
-                    <button className="btn-confirm" onClick={() => {
-                        dataFromParent.setShowVarukorg(false)
-                        dataFromParent.setShowMenu(true)
-                    }}> Tillbaka till menyn </button>
+                    <button className="btn-confirm" onClick={() => { navigateTo('menu') }}> 
+                        Tillbaka till menyn 
+                    </button>
+                    
                     <button className="btn-confirm"onClick={() => {
 
                         // Ställ in vilken vy som ska visas här!
-                        // exempel: 
-                        // dataFromParent.setShowOrderConfirmation
+                        // navigateTo('')
 
                     }}> Gå vidare </button>
                 </div>
