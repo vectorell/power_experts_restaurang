@@ -2,17 +2,22 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
+	text-align: left;
 	width: 100%;
-	height: 100%;
+	height: 50%;
+	padding-top: 2em;
 	font-family: var(--heading-font);
-	color: var(--offwhite) ;
 	background-color: var(--background-grey);
 }
 
-.hamburger-overlay:nth-child(even){
-	margin: 1em 0;
-
+.hamburger-main-menu {
+	list-style-type: none;
+	/* border: 1px solid lime; */
+	
 }
 
+.hamburger-main-menu > li {
+	margin: 1em 0;
+}
 

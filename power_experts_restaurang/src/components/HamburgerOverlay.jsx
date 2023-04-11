@@ -22,14 +22,14 @@ const HamburgerOverlay = () => {
 
 	return(
 		<section className = 'hamburger-overlay'>
-			
-				<p onClick ={onClickMenu} className='link'> Till menyn</p>
-				<p onClick={onClickLogin} className="link">Personal</p>	
-					<div className="phone">
+			<ul className="hamburger-main-menu">
+				<li onClick ={onClickMenu} className='link' tabIndex={0}> Till menyn</li>
+				<li onClick={onClickLogin} className="link" tabIndex={0}>Personal</li>	
+					<li className="phone">
 					<FontAwesomeIcon icon = {faPhone} className="phone-icon "/>
-					<p>0700-202020</p>
-					</div>
-				
+					<p tabIndex={0}>0700-202020</p>
+					</li>
+			</ul>
 		</section>
 
 	)

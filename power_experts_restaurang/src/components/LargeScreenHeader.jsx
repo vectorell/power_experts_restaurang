@@ -36,14 +36,16 @@ const LargeScreenHeader = () => {
 
 	return(
 	<div className='header-desktop'>
-		<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome} className="header-logo "/>
-			<p onClick ={onClickMenu} className='link'> Till menyn</p>
-			<p onClick={onClickLogin} className="link">Personal</p>
-				<div className="phone">
-					<FontAwesomeIcon icon = {faPhone} className="phone-icon "/>
-					<p>0700-202020</p>
-				</div>
-			<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-desktop link fa-lg' onClick={onClickCart} aria-label='Varukorg'/>
+		<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome} className="header-logo" tabIndex={0}/>
+		<ul className="main-menu  desktop-main-menu" >
+			<li onClick ={onClickMenu} className='link' tabIndex={0}> Till menyn</li>
+			<li onClick={onClickLogin} className="link" tabIndex={0}>Personal</li>
+				<li className="phone">
+					<FontAwesomeIcon icon = {faPhone} className="phone-icon"/>
+					<p tabIndex={0}>0700-202020</p>
+				</li>
+			</ul>		
+			<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-desktop link fa-lg' onClick={onClickCart} aria-label='Varukorg' />
 
 			</div>
 	)		

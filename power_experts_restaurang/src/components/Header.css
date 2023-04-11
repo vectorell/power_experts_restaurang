@@ -55,6 +55,17 @@ display: none;
 	margin-right: 1em;
 }
 
+
+.desktop-main-menu{
+	display: flex;
+	flex-direction: row;
+}
+
+.desktop-main-menu > li{
+	list-style-type: none;
+	padding: 0 1em;
+}
+
 .link{
 	transition: 0.2s;
 	color: var(--offwhite);
