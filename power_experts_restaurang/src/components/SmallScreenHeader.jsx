@@ -12,12 +12,16 @@ const SmallScreenHeader =() => {
 	const onClickCart =() =>{
 		console.log('jag klickade på varukorg');
 		dataFromParent.setShowLandingPage(false)
-		dataFromParent.setShowMenu(false)
 		dataFromParent.setShowVarukorg(true)
+		dataFromParent.setShowHamburgerOverlay(false)
 	}
 
 	const onClickBars =() =>{
-		console.log('jag klickade på hamurgare');
+		console.log('jag klickade på hamurgaren');
+		dataFromParent.setShowLandingPage(false)
+		dataFromParent.setShowHamburgerOverlay(true)
+		dataFromParent.setShowMenu(false)
+		dataFromParent.setShowVarukorg(false)
 	}
 
 	const onClickHome = () => {
@@ -25,14 +29,15 @@ const SmallScreenHeader =() => {
 		dataFromParent.setShowLandingPage(true)
 		dataFromParent.setShowMenu(false)
 		dataFromParent.setShowVarukorg(false)
+		dataFromParent.setShowHamburgerOverlay(false)
 	}
 
-const onClickMenu = () => {
-	console.log('Jag vill se menyn');
-	dataFromParent.setShowLandingPage(false)
+	const onClickMenu = () => {
+		console.log('Jag vill se menyn');
+		dataFromParent.setShowLandingPage(false)
 		dataFromParent.setShowMenu(true)
-		dataFromParent.setShowVarukorg(false)
-}
+		dataFromParent.setShowHamburgerOverlay(false)
+	}
 
 const onClickLogin = () => {
 	console.log('personal login');

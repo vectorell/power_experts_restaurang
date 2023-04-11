@@ -6,7 +6,6 @@
 	padding: 0.8em 0.3em;
 	width: 100%;
 	background-color: var(--background-grey);
-
 }
 
 .header-logo{
@@ -29,7 +28,6 @@ display: none;
 	width: fit-content;
 	padding:0;
 	color:var(--offwhite)
-
 }
 
 .phone-icon{
@@ -40,7 +38,6 @@ display: none;
 .cart{
 	color: var(--offwhite);
 	padding-bottom: 0.4em;
-	
 }
 
 .cart-mobile{
@@ -50,7 +47,6 @@ display: none;
 
 .cart-desktop{
 	margin-right: 1em;
-
 }
 
 .bars{
@@ -61,6 +57,7 @@ display: none;
 
 .link{
 	transition: 0.2s;
+	color: var(--offwhite);
 }
 
 .link:hover {

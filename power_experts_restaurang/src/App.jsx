@@ -9,49 +9,54 @@ import OpeningHours from './components/OpeningHours'
 import HeroImage from './components/HeroImage'
 import Varukorg from './components/Varukorg'
 import foodItems from './assets/foodItems'
+import HamburgerOverlay from './components/HamburgerOverlay'
 
 export const ContextProvider = React.createContext()
-import './App.css'
 import '../src/components/menu.css'
 import MenuItems from './components/menu'
 import drinkItems from './components/menu'
 
 function App() {
-  const [selectedFoodItems, setSelectedFoodItems] = useState([])
-  const [showLandingPage, setShowLandingPage] = useState(true)
-  const [showVarukorg, setShowVarukorg] = useState(false)
-  const [showMenu, setShowMenu] = useState(false)
+	const [selectedFoodItems, setSelectedFoodItems] = useState([])
+	const [showLandingPage, setShowLandingPage] = useState(true)
+	const [showVarukorg, setShowVarukorg] = useState(false)
+	const [showMenu, setShowMenu] = useState(false)
+	const [ showHamburgerOverlay, setShowHamburgerOverlay] = useState(false)
 
-  // Globala variabler/arrayer osv
-  const contextValues = {
-    foodItems,
-    selectedFoodItems,
-    setSelectedFoodItems,
-    showLandingPage,
-    setShowLandingPage,
-    showVarukorg,
-    setShowVarukorg,
-    showMenu,
-    setShowMenu,
-  }
+	// Globala variabler/arrayer osv
+	const contextValues = {
+		foodItems,
+		selectedFoodItems,
+		setSelectedFoodItems,
+		showLandingPage,
+		setShowLandingPage,
+		showVarukorg,
+		setShowVarukorg,
+		showMenu,
+		setShowMenu,
+		showHamburgerOverlay,
+		setShowHamburgerOverlay,
+	}
 
-  return (
-    <ContextProvider.Provider value={contextValues}>
+	return (
+		<ContextProvider.Provider value={contextValues}>
 
-      <div className="App">
-        <Header/>
-        <div className='landing-page'>
-          {showLandingPage && <HeroImage/>}
-          {showLandingPage && <OpeningHours/>}
-        </div>
-        {showVarukorg && <Varukorg/>}
-      </div>
+		<div className="App">
+			<Header/>
+			{showHamburgerOverlay && <HamburgerOverlay/>}
 
-    <div className="main-container">
-      {showMenu && <MenuItems items={foodItems}/>}
-    </div>
-    </ContextProvider.Provider>
-  )
+			<div className='landing-page'>
+			{showLandingPage && <HeroImage/>}
+			{showLandingPage && <OpeningHours/>}
+			</div>
+			{showVarukorg && <Varukorg/>}
+		</div>
+
+		<div className="main-container">
+		{showMenu && <MenuItems items={foodItems}/>}
+		</div>
+		</ContextProvider.Provider>
+	)
 }
 
 export default App
