@@ -13,12 +13,14 @@ import './App.css'
 import '../src/components/menu.css'
 import MenuItems from './components/menu'
 import drinkItems from './components/menu'
+import AddNewDish from './components/AddNewDish'
 
 function App() {
   const [selectedFoodItems, setSelectedFoodItems] = useState([])
   const [showLandingPage, setShowLandingPage] = useState(true)
   const [showVarukorg, setShowVarukorg] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
+  const [foodItemsArray, setFoodItemsArray] = useState(foodItems)
 
   function navigateTo(page) {
     const pages = [
@@ -47,6 +49,8 @@ function App() {
     showMenu,
     setShowMenu,
     navigateTo,
+    foodItemsArray,
+    setFoodItemsArray,
   }
 
   return (
@@ -54,6 +58,7 @@ function App() {
 
       <div className="App">
         <Header/>
+        <AddNewDish/>
         <div className='landing-page'>
           {showLandingPage && <HeroImage/>}
           {showLandingPage && <OpeningHours/>}
@@ -62,7 +67,7 @@ function App() {
       </div>
 
     <div className="main-container">
-      {showMenu && <MenuItems items={foodItems}/>}
+      {showMenu && <MenuItems items={foodItemsArray}/>}
     </div>
     </ContextProvider.Provider>
   )

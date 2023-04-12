@@ -12,7 +12,7 @@ function Menu({ items }) {
 	console.log(selectedFoodItems)
     const selectedFoodItem = items.find((item) => item.id === foodItem.id);
     setSelectedFoodItems([...selectedFoodItems, selectedFoodItem]);
-    setSelectedDishes([...selectedDishes, selectedFoodItem]);
+    // setSelectedDishes([...selectedDishes, selectedFoodItem]);
   }
 
   return (
@@ -21,6 +21,7 @@ function Menu({ items }) {
 				navigateTo('landing')
 	  }}/>
       <h1 className="menu-header">Meny</h1>
+      <button className="add-dish"> Lägg till en ny maträtt </button>
       {items.map((foodItem) => (
         <div key={foodItem.id} className="dish-container">
           <img src={foodItem.image} alt={foodItem.name} className="food-img" />

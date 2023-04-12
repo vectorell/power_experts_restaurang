@@ -1,0 +1,21 @@
+.add-dish-form {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    max-width: 15em;
+    padding: 1em;
+    background-color: var(--offwhite);
+}
+
+.title {
+    margin-bottom: 1em;
+}
+
+.title-input {
+    margin-top: 1em;
+}
+
+.submit-btn {
+    align-self: center;
+    margin-top: 2em;
+}
