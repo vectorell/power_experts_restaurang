@@ -82,6 +82,9 @@ display: none;
 	transform: scale(1.1)
 }
 
+.mobile-link:hover{
+	cursor: pointer;
+}
 
 /* hamburger overlay */
 .hamburger-overlay{
