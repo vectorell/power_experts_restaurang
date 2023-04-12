@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 // import HamburgerOverlay from "./HamburgerOverlay";
 
 
@@ -23,7 +24,7 @@ const SmallScreenHeader =() => {
 	}
 
 	// öppna hamburgare
-	const onClickBars =() =>{
+	const onClickToggleMainMenu =() =>{
 		console.log('jag klickade på hamburgaren');
 		setHamburgerOpen(!hamburgerOpen)
 	}
@@ -54,10 +55,11 @@ const SmallScreenHeader =() => {
 				
 				<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-mobile fa-lg' onClick={onClickCart} aria-label='Varukorg' tabIndex={0}/>
 
-				<FontAwesomeIcon icon = {faBars} className='bars fa-lg' onClick={onClickBars} aria-label='Öppna menyval' tabIndex={0}/>
+				<FontAwesomeIcon icon = {faBars} className='bars fa-lg' onClick={onClickToggleMainMenu} aria-label='Öppna menyval' tabIndex={0}/>
 			</div>
 
 			<nav className = {hamburgerOpen ? 'hamburger-overlay' : 'hamburger-overlay-open' }>
+				<FontAwesomeIcon icon = {faClose} className=" faXmark fa-lg" onClick = {onClickToggleMainMenu} aria-label='Stäng menyval' tabIndex={0}/>
 			<ul className="hamburger-main-menu">
 				<li onClick ={onClickMenu} className='link' tabIndex={0}> Till menyn</li>
 				<li onClick={onClickLogin} className="link" tabIndex={0}>Personal</li>	
