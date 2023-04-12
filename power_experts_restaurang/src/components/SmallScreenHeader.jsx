@@ -35,7 +35,7 @@ const SmallScreenHeader =() => {
 	// gå till menyn
 	const onClickMenu = () => {
 		console.log('Jag vill se menyn');
-		navigateTo('landing')
+		navigateTo('menu')
 		setHamburgerOpen(!hamburgerOpen)
 	}
 
