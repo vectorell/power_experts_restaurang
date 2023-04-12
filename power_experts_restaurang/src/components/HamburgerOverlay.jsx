@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+/* import { useContext, useState } from "react";
 import { ContextProvider } from "../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +20,7 @@ const HamburgerOverlay = () => {
 	}
 
 	return(
-		<nav className = 'hamburger-overlay'>
+		<nav  className = {hamburgerOpen ? 'hamburger-overlay' : 'hamburger-overlay-open' }>
 			<ul className="hamburger-main-menu">
 				<li onClick ={onClickMenu} className='link' tabIndex={0}> Till menyn</li>
 				<li onClick={onClickLogin} className="link" tabIndex={0}>Personal</li>	
@@ -35,4 +35,4 @@ const HamburgerOverlay = () => {
 }
 
 
-export default HamburgerOverlay
+export default HamburgerOverlay */
