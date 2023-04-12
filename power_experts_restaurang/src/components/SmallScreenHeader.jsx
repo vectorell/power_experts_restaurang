@@ -6,11 +6,10 @@ import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
-// import HamburgerOverlay from "./HamburgerOverlay";
 
 
 const SmallScreenHeader =() => {
-	const dataFromParent = useContext(ContextProvider)
+	const { navigateTo } = useContext(ContextProvider)
 
 	const [hamburgerOpen, setHamburgerOpen] = useState(true)
   
@@ -39,6 +38,7 @@ const SmallScreenHeader =() => {
 		navigateTo('landing')
 		setHamburgerOpen(!hamburgerOpen)
 	}
+
 	// gå till personal login
 	const onClickLogin = () => {
 		console.log('personal login');

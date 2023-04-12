@@ -8,21 +8,25 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 const LargeScreenHeader = () => {
 	const { navigateTo } = useContext(ContextProvider)
 
+	// gå till varukorg
 	const onClickCart =() =>{
 		console.log('jag klickade på varukorg');
 		navigateTo('varukorg')
 	}
 
+	// gå till landingpage
 	const onClickHome = () => {
 		console.log('jag vill hem!');
 		navigateTo('landing')
 	}
 
+	// gå till menyn
 	const onClickMenu = () => {
 		console.log('Jag vill se menyn');
-		navigateTo('menu')
+		navigateTo('landing')
 	}
 
+	// gå till personal login
 	const onClickLogin = () => {
 		console.log('personal login');
 	}
