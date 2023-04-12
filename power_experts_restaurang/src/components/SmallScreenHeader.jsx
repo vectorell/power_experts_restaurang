@@ -17,9 +17,8 @@ const SmallScreenHeader =() => {
 
 	useEffect(() => {
 		const checkIfClickedOutside = e =>{
-			if (hamburgerOpen && ref.current && !ref.current.contains(e.target)) {
-				setHamburgerOpen(false)
-			}
+			{hamburgerOpen && ref.current && !ref.current.contains(e.target) ? setHamburgerOpen(false) : null}
+
 		}
 
 		document.addEventListener('mousedown', checkIfClickedOutside)

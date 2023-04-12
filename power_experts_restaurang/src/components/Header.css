@@ -105,6 +105,8 @@ display: none;
 	height: 20em;
 	font-family: var(--heading-font);
 	font-size: var(--fontSmall);
+	border: 1px solid var(--offwhite);
+	border-radius: 0 0 0.3em 0.3em ;
 	background-color: var(--background-gray);
 }
 
