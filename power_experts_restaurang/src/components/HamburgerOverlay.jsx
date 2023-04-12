@@ -20,7 +20,7 @@ const HamburgerOverlay = () => {
 	}
 
 	return(
-		<section className = 'hamburger-overlay'>
+		<nav className = 'hamburger-overlay'>
 			<ul className="hamburger-main-menu">
 				<li onClick ={onClickMenu} className='link' tabIndex={0}> Till menyn</li>
 				<li onClick={onClickLogin} className="link" tabIndex={0}>Personal</li>	
@@ -29,7 +29,7 @@ const HamburgerOverlay = () => {
 					<p tabIndex={0}>0700-202020</p>
 					</li>
 			</ul>
-		</section>
+		</nav>
 
 	)
 }
