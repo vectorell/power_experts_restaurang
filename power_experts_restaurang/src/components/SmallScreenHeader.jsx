@@ -18,9 +18,7 @@ const SmallScreenHeader =() => {
 	// gå till varukorg
 	const onClickCart =() =>{
 		console.log('jag klickade på varukorg');
-		dataFromParent.setShowLandingPage(false)
-		dataFromParent.setShowMenu(false)
-		dataFromParent.setShowVarukorg(true)
+		navigateTo('varukorg')
 	}
 
 	// öppna hamburgare
@@ -32,16 +30,13 @@ const SmallScreenHeader =() => {
 	// gå till landingpage
 	const onClickHome = () => {
 		console.log('jag vill hem!');
-		dataFromParent.setShowLandingPage(true)
-		dataFromParent.setShowMenu(false)
-		dataFromParent.setShowVarukorg(false)
+		navigateTo('landing')
 	}
 
 	// gå till menyn
 	const onClickMenu = () => {
 		console.log('Jag vill se menyn');
-		dataFromParent.setShowLandingPage(false)
-		dataFromParent.setShowMenu(true)
+		navigateTo('landing')
 		setHamburgerOpen(!hamburgerOpen)
 	}
 	// gå till personal login

@@ -21,7 +21,6 @@ function App() {
 	const [showMenu, setShowMenu] = useState(false)
 	
 
-<<<<<<< HEAD
   function navigateTo(page) {
     const pages = [
       {name: 'landing', variable: "setShowLandingPage"},
@@ -50,20 +49,6 @@ function App() {
     setShowMenu,
     navigateTo,
   }
-=======
-	// Globala variabler/arrayer osv
-	const contextValues = {
-		foodItems,
-		selectedFoodItems,
-		setSelectedFoodItems,
-		showLandingPage,
-		setShowLandingPage,
-		showVarukorg,
-		setShowVarukorg,
-		showMenu,
-		setShowMenu,
-	}
->>>>>>> header
 
 	return (
 		<ContextProvider.Provider value={contextValues}>
