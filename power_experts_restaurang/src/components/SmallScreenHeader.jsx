@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ContextProvider } from "../App";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
@@ -11,8 +11,23 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 const SmallScreenHeader =() => {
 	const { navigateTo } = useContext(ContextProvider)
 
-	const [hamburgerOpen, setHamburgerOpen] = useState(true)
+	const [hamburgerOpen, setHamburgerOpen] = useState(false)
   
+	const ref = useRef()
+
+	useEffect(() => {
+		const checkIfClickedOutside = e =>{
+			if (hamburgerOpen && ref.current && !ref.current.contains(e.target)) {
+				setHamburgerOpen(false)
+			}
+		}
+
+		document.addEventListener('mousedown', checkIfClickedOutside)
+
+		return () => {
+			document.removeEventListener('mousedown', checkIfClickedOutside)
+		}
+	},[hamburgerOpen])
    
 	// gå till varukorg
 	const onClickCart =() =>{
@@ -55,7 +70,7 @@ const SmallScreenHeader =() => {
 				<FontAwesomeIcon icon = {faBars} className='bars fa-lg mobile-link' onClick={onClickToggleMainMenu} aria-label='Öppna menyval' tabIndex={0}/>
 			</div>
 
-			<nav className = {hamburgerOpen ? 'hamburger-overlay' : 'hamburger-overlay-open' }>
+			<nav className = {!hamburgerOpen ? 'hamburger-overlay' : 'hamburger-overlay-open' } ref={ref}>
 				<FontAwesomeIcon icon = {faClose} className=" faXmark fa-lg mobile-link" onClick = {onClickToggleMainMenu} aria-label='Stäng menyval' tabIndex={0}/>
 			<ul className="hamburger-main-menu">
 				<li onClick ={onClickMenu} className='mobile-link' tabIndex={0}> Till menyn</li>
