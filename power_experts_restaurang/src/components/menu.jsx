@@ -1,17 +1,32 @@
 import { useState, useContext } from "react";
 import { ContextProvider } from "../App";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Menu({ items }) {
+
+
+function Menu({ items, isLoggedIn }) {
+
+  isLoggedIn = true;
+
   const { selectedFoodItems, setSelectedFoodItems } = useContext(ContextProvider);
   const dataFromParent = useContext(ContextProvider)
 
   const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems);
+
+  
 
   function handleClick(foodItem) {
 	console.log(selectedFoodItems)
     const selectedFoodItem = items.find((item) => item.id === foodItem.id);
     setSelectedFoodItems([...selectedFoodItems, selectedFoodItem]);
     setSelectedDishes([...selectedDishes, selectedFoodItem]);
+  }
+
+  function editPrice(foodItem) {
+    console.log(foodItem.price, foodItem.name)
+    
   }
 
   return (
@@ -32,9 +47,13 @@ function Menu({ items }) {
               <span className="innehåll">Innehåll:</span> {foodItem.description}
             </p>
           ) : null}
-          <button className="menu-btn" onClick={() => handleClick(foodItem)}>
+           <div className="btn-div">
+           {isLoggedIn && (<FontAwesomeIcon icon={faPen} className="staff-icons" onClick={() => editPrice(foodItem)}/>)}
+          {!isLoggedIn && <button className="menu-btn" onClick={() => handleClick(foodItem)}>
             Lägg till
-          </button>
+          </button>}
+          {isLoggedIn && <FontAwesomeIcon icon={faTrash} className="staff-icons"/>}
+          </div>
         </div>
       ))}
 	  <button onClick={ () => {
