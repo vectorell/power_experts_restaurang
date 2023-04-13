@@ -50,7 +50,7 @@ const LargeScreenHeader = () => {
 		<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome} onKeyDown={onKeyDownHome} className="header-logo" tabIndex={0}/>
 		<ul className="main-menu  desktop-main-menu" >
 			<li onClick ={onClickMenu} onKeyDown={onKeyDownMenu} className='link' tabIndex={0}> Till menyn</li>
-			<li onClick={onClickLogin} onKeyDown={onClickLogin} className="link" tabIndex={0}>Personal</li>
+			<li onClick={onClickLogin} onKeyDown={onKeyDownLogin} className="link" tabIndex={0}>Personal</li>
 				<li className="phone">
 					<FontAwesomeIcon icon = {faPhone} className="phone-icon"/>
 					<p tabIndex={0}>0700-202020</p>
