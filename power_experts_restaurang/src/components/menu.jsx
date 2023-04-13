@@ -21,7 +21,7 @@ function Menu({ items }) {
 				navigateTo('landing')
 	  }}/>
       <h1 className="menu-header">Meny</h1>
-      <button className="add-dish"> Lägg till en ny maträtt </button>
+      <button className="add-dish" onClick={() => {navigateTo('newDish')}}> Lägg till en ny maträtt </button>
       {items.map((foodItem) => (
         <div key={foodItem.id} className="dish-container">
           <img src={foodItem.image} alt={foodItem.name} className="food-img" />

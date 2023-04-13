@@ -20,13 +20,15 @@ function App() {
   const [showLandingPage, setShowLandingPage] = useState(true)
   const [showVarukorg, setShowVarukorg] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
+  const [showAddNewDish, setShowAddNewDish] = useState(false)
   const [foodItemsArray, setFoodItemsArray] = useState(foodItems)
 
   function navigateTo(page) {
     const pages = [
       {name: 'landing', variable: "setShowLandingPage"},
       {name: 'menu', variable: "setShowMenu"},
-      {name: 'varukorg', variable: "setShowVarukorg"}
+      {name: 'varukorg', variable: "setShowVarukorg"},
+      {name: 'newDish', variable: "setShowAddNewDish"}
     ]
 
     pages.forEach((p) => {
@@ -48,6 +50,8 @@ function App() {
     setShowVarukorg,
     showMenu,
     setShowMenu,
+    showAddNewDish,
+    setShowAddNewDish,
     navigateTo,
     foodItemsArray,
     setFoodItemsArray,
@@ -58,7 +62,7 @@ function App() {
 
       <div className="App">
         <Header/>
-        <AddNewDish/>
+        {showAddNewDish && <AddNewDish/>}
         <div className='landing-page'>
           {showLandingPage && <HeroImage/>}
           {showLandingPage && <OpeningHours/>}
