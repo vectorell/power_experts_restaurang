@@ -13,7 +13,6 @@
 	background-color: var(--background-grey);
 }
 
-
 .header-logo{
 	width: 15%;
 	min-width: 5em;
@@ -45,9 +44,7 @@ display: none;
 .cart{
 	color: var(--offwhite);
 	padding-bottom: 0.4em;
-	
 }
-
 
 .cart-mobile{
 	position:absolute;
@@ -135,14 +132,8 @@ display: none;
 	margin: 2em 0;
 	color: var(--offwhite)
 }
-.change-color {
-	color: var(--orange);
-	margin-bottom: -1em;
-	
-}
-.text-under-cart{
-	margin-top: 0.6em;
-}
+
+
 /* tablet */
 @media (min-width:481px) and (max-width:768px) {
 
