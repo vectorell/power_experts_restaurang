@@ -13,8 +13,10 @@ import foodItems from "../assets/foodItems";
 function Menu({ isLoggedIn }) {
   const [editingItemId, setEditingItemId] = useState(null);
   const { selectedFoodItems, setSelectedFoodItems } = useContext(ContextProvider);
+  const dataFromParent = useContext(ContextProvider)
+  const { navigateTo } = useContext(ContextProvider)
+
   const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems);
-  const dataFromParent = useContext(ContextProvider);
 
   // Hämta maträtter från localStorage om det finns lagrade maträtter
   const storedFoodItems = JSON.parse(localStorage.getItem("foodItems"));
@@ -59,17 +61,10 @@ function Menu({ isLoggedIn }) {
   isLoggedIn = false
 
   return (
-    <div className="menu-container">
-      <img
-        src="../src/components/menu-img/logo.png"
-        alt="loggo"
-        className="logo"
-        onClick={() => {
-          dataFromParent.setShowLandingPage(true);
-          dataFromParent.setShowMenu(false);
-          dataFromParent.setShowVarukorg(false);
-        }}
-      />
+	  <div className="menu-container">
+	  <img src="../src/components/menu-img/logo.png" alt="loggo" className="logo" onClick={() => {
+				navigateTo('landing')
+	  }}/>
       <h1 className="menu-header">Meny</h1>
       {items.map((foodItem) => (
         <div key={foodItem.id} className="dish-container">
@@ -160,15 +155,9 @@ function Menu({ isLoggedIn }) {
           )}
         </div>
       ))}
-      <button
-        onClick={() => {
-          dataFromParent.setShowMenu(false);
-          dataFromParent.setShowVarukorg(true);
-        }}
-        className="btn-forward"
-      >
-        Till varukorgen
-      </button>
+	  <button onClick={ () => { navigateTo('varukorg') }} className="btn-forward"> 
+      Till varukorgen 
+    </button>
     </div>
   );
 
