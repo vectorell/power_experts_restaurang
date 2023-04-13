@@ -24,18 +24,19 @@ body {
 	justify-content: space-evenly;
 	text-align: center;
 	margin: 1.5em 0 1.5em 0;
+	aspect-ratio: 1/1.3;
 	max-width: 22em;
 	padding: 0.5em;
-	height: 28em;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-	transform: scale(0.9);
+	transform: scale(1);
 	border-radius: 15px;
 }
 
 .food-img {
-	width: 16em;
+	width: 80%;
 	border-radius: 0.3em;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	mix-blend-mode: color-burn;
 }
 
 .menu-container {
@@ -60,7 +61,7 @@ body {
 
 }
 
-.dish-container>* {
+.dish-container > * {
 	margin: 0.25em;
 }
 
@@ -103,9 +104,36 @@ body {
 	font-weight: 600;
 	min-width: 9em;
 	transition: all 0.3s ease;
+	scale: 0.9
 }
 .btn-forward:hover{
 	box-shadow: 0 0 0 2px rgb(0, 0, 0); 
+}
+.btn-div {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.staff-icons {
+	font-size: 1.25em;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	margin: 1em 0em;
+}
+.staff-icons:hover {
+	transform: scale(1.1);
+}
+.dish-input, .dish-textarea {
+	width: 12em;
+	font-size: 1em;
+	
+}
+.dish-textarea {
+	height: 2em;
+}
+.input-label {
+	font-weight: bold;
 }
 
 @media screen and (min-width: 850px) and (max-width: 1250px) {
@@ -113,15 +141,19 @@ body {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		justify-items: center;
-		overflow: auto;
 	}
 
 	.menu-header {
 		grid-column: 1 / 3;
 	}
 	.dish-container{
-		height: 100%;
-		width: 22em;
+		aspect-ratio: 1/1.25;
+		max-width: 20em;
+
+	}
+	.btn-forward {
+		grid-column: 1/ 3;
+		margin: 1em;
 	}
 }
 
@@ -146,7 +178,7 @@ body {
 		justify-content: space-between;
 		height: 90%;
 		box-shadow: rgba(100, 100, 111, 0.2) 0em 0.35em 1.45em 0em;
-		width: 22em;
+		max-width: 22em;
 		
 	}
 	.logo {

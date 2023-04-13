@@ -57,7 +57,7 @@ function AddNewDish() {
         }
 
 
-        if ((name !== '') && (price !== '') && (contents !== '')) {
+        if ((inputNameRef.current.className=='valid') && (inputPriceRef.current.className=='valid') && (inputContentsRef.current.className=='valid')) {
 
             let newDishObj = {
                 id: Math.random().toString(),
@@ -77,6 +77,9 @@ function AddNewDish() {
             inputNameRef.current.value = ''
             inputPriceRef.current.value = ''
             inputContentsRef.current.value = ''
+            setName('')
+            setPrice('')
+            setContents('')
         } 
     }
 

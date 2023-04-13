@@ -21,6 +21,10 @@
 	box-sizing: border-box;
 }
 
+html{
+ scroll-behavior: smooth;
+}
+
 body{
 	height: 100%;
 	background-color: var(--background-gray);
@@ -38,6 +42,19 @@ button{
 	border-radius: var(--border-radius);
 	border: none;
 	font-size: var(--fontmedium);
+	font-weight: bold;
 	width: 8em;
 	background-color: var(--orange);
+	transition: 0.2s;
 }
+
+button:hover {
+	transition: 0.2s;
+	transform: scale(103%);
+	cursor: pointer;
+  }
+
+button:active {
+	transition: 0s;
+	background-color: #cf7520;
+  }

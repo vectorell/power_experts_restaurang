@@ -8,8 +8,8 @@ import HeroImage from './components/HeroImage'
 import Varukorg from './components/Varukorg'
 import foodItems from './assets/foodItems'
 
+
 export const ContextProvider = React.createContext()
-import './App.css'
 import '../src/components/menu.css'
 import MenuItems from './components/menu'
 import drinkItems from './components/menu'
@@ -57,8 +57,8 @@ function App() {
     setFoodItemsArray,
   }
 
-  return (
-    <ContextProvider.Provider value={contextValues}>
+	return (
+		<ContextProvider.Provider value={contextValues}>
 
       <div className="App">
         <Header/>

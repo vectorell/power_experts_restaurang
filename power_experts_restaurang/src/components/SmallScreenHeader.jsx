@@ -1,49 +1,101 @@
 import { useContext } from "react";
 import { ContextProvider } from "../App";
+import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 
 const SmallScreenHeader =() => {
-	const dataFromParent = useContext(ContextProvider)
+	const { navigateTo } = useContext(ContextProvider)
 
+	const [hamburgerOpen, setHamburgerOpen] = useState(false)
+
+// För att stänga hamburgermenyn genom att klicka utanför  
+	const ref = useRef()
+
+	useEffect(() => {
+		const checkIfClickedOutside = e =>{
+			{hamburgerOpen && ref.current && !ref.current.contains(e.target) ? setHamburgerOpen(false) : null}
+		}
+
+		document.addEventListener('mousedown', checkIfClickedOutside)
+
+		return () => {
+			document.removeEventListener('mousedown', checkIfClickedOutside)
+		}
+	},[hamburgerOpen])
+   
+	// gå till varukorg
 	const onClickCart =() =>{
 		console.log('jag klickade på varukorg');
-		dataFromParent.setShowLandingPage(false)
-		dataFromParent.setShowMenu(false)
-		dataFromParent.setShowVarukorg(true)
+		navigateTo('varukorg')
+	}
+	const onKeyDownCart = () => {
+		{event.key === 'Enter' ? navigateTo('varukorg') : null}
 	}
 
-	const onClickBars =() =>{
-		console.log('jag klickade på hamurgare');
+	// öppna el. stänga hamburgare
+	const onClickToggleMainMenu =() =>{
+		console.log('jag klickade på hamburgaren');
+		setHamburgerOpen(!hamburgerOpen)
+	}
+	const onKeyDownToggleMainMenu = () => {
+		{event.key === 'Enter' ?setHamburgerOpen(!hamburgerOpen) : null}
 	}
 
+	// gå till landingpage
 	const onClickHome = () => {
 		console.log('jag vill hem!');
-		dataFromParent.setShowLandingPage(true)
-		dataFromParent.setShowMenu(false)
-		dataFromParent.setShowVarukorg(false)
+		navigateTo('landing')
+	}
+	const onKeyDownHome = () => {
+		{event.key === 'Enter' ? navigateTo('landing') : null}
 	}
 
-const onClickMenu = () => {
-	console.log('Jag vill se menyn');
-	dataFromParent.setShowLandingPage(false)
-		dataFromParent.setShowMenu(true)
-		dataFromParent.setShowVarukorg(false)
-}
+	// gå till menyn
+	const onClickMenu = () => {
+		console.log('Jag vill se menyn');
+		navigateTo('menu')
+		setHamburgerOpen(!hamburgerOpen)
+	}
+	const onKeyDownMenu = () => {
+		{event.key === 'Enter' ? navigateTo('menu') : null}
+	}
 
-const onClickLogin = () => {
-	console.log('personal login');
-}
+	// gå till personal login
+	const onClickLogin = () => {
+		console.log('personal login');
+		setHamburgerOpen(!hamburgerOpen)
+	}
+	const onKeyDownLogin = () => {
+		{event.key === 'Enter' ? console.log('personal login') : null}
+	}
 
 	return(
-		<div className="header-mobile">
-		<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome}className="header-logo "/>
-		<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-mobile fa-lg' onClick={onClickCart} aria-label='Varukorg'/>
-		<FontAwesomeIcon icon = {faBars} className='bars fa-lg' onClick={onClickBars} aria-label='Öppna menyval'/>
-	</div>
+		<div>
+			<div className="header-mobile">
+				<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome} onKeyDown={onKeyDownHome} className="header-logo" tabIndex={0}/>
+				
+				<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-mobile fa-lg mobile-link' onClick={onClickCart} onKeyDown={onKeyDownCart} aria-label='Varukorg' tabIndex={0}/>
+
+				<FontAwesomeIcon icon = {faBars} className='bars fa-lg mobile-link' onClick={onClickToggleMainMenu} onKeyDown={onKeyDownToggleMainMenu} aria-label='Öppna menyval' tabIndex={0}/>
+			</div>
+
+			<nav className = {!hamburgerOpen ? 'hamburger-overlay' : 'hamburger-overlay-open' } ref={ref}>
+				<FontAwesomeIcon icon = {faClose} className=" faXmark fa-lg mobile-link" onClick = {onClickToggleMainMenu} onKeyDown={onKeyDownToggleMainMenu} aria-label='Stäng menyval' tabIndex={0}/>
+			<ul className="hamburger-main-menu">
+				<li onClick ={onClickMenu} onKeyDown={onKeyDownMenu} className='mobile-link' tabIndex={0}> Till menyn</li>
+				<li onClick={onClickLogin} onKeyDown={onKeyDownLogin} className="mobile-link" tabIndex={0}>Personal</li>	
+					<li className="phone">
+					<FontAwesomeIcon icon = {faPhone} className="phone-icon "/>
+					<p tabIndex={0}>0700-202020</p>
+					</li>
+			</ul>
+			</nav>
+</div>
 	)
 }
 
