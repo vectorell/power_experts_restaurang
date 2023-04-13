@@ -1,5 +1,6 @@
 import { useState } from 'react' ;
 import './App.css'
+import './inloggning.css'
 
 import InLoggning from './personal-sidan';
 import {HeaderPage} from './personal-sidan'

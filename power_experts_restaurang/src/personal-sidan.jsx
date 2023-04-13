@@ -13,7 +13,7 @@ const Inloggning = () => {
 
   const database = [
     {
-      username: "power",
+      username: "mums",
       password: "mums"
     }
   ];
@@ -46,7 +46,7 @@ const Inloggning = () => {
 
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
+      <div className="error"> {errorMessages.message}</div>
     );
 
   const renderForm = (
@@ -54,10 +54,10 @@ const Inloggning = () => {
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <input type="text" name="uname" required placeholder="Användernamn" />
-          {renderErrorMessage("wrongName")}
+         {renderErrorMessage("wrongName")} 
         </div>
-        <div className="input-container">
-          <input type="password" name="pass" required placeholder="Lösenord" />
+        <div className="input-container2">
+          <input className="input-name" type="password" name="pass" required placeholder="Lösenord" />
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
