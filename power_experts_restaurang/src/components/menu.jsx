@@ -7,21 +7,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import foodItems from "../assets/foodItems";
 
 
-
+// export function onClickCart() {
+//   console.log('klick')
+//   }
 function Menu({ isLoggedIn }) {
   const [editingItemId, setEditingItemId] = useState(null);
   const { selectedFoodItems, setSelectedFoodItems } = useContext(ContextProvider);
+  const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems);
   const dataFromParent = useContext(ContextProvider);
 
   // Hämta maträtter från localStorage om det finns lagrade maträtter
   const storedFoodItems = JSON.parse(localStorage.getItem("foodItems"));
   const items = storedFoodItems || foodItems;
-  
 
   function handleClick(foodItem) {
     const selectedFoodItem = items.find((item) => item.id === foodItem.id);
     setSelectedFoodItems([...selectedFoodItems, selectedFoodItem]);
     setSelectedDishes([...selectedDishes, selectedFoodItem]);
+  
+    // Sätt in texten i rätt kort
+    const parentCard = event.target.parentNode.parentNode;
+    const addedText = parentCard.querySelector(".added-text");
+    addedText.style.visibility = "visible";
+  
+    // Dölj texten efter 2 sekunder
+    setTimeout(() => {
+      addedText.style.visibility = "hidden";
+    }, 2000);
   }
 
   const handleSave = (foodItem) => {
@@ -30,8 +42,9 @@ function Menu({ isLoggedIn }) {
     const updatedItems = [...items];
     updatedItems[index] = foodItem;
     dataFromParent.setItems(updatedItems);
-  
+
     localStorage.setItem("foodItems", JSON.stringify(updatedItems));
+
   };
 
   const deleteDish = (id) => {
@@ -41,7 +54,9 @@ function Menu({ isLoggedIn }) {
     console.log('click')
   };
 
-  isLoggedIn = true
+
+  //true = staff-sidan, false =
+  isLoggedIn = false
 
   return (
     <div className="menu-container">
@@ -63,18 +78,30 @@ function Menu({ isLoggedIn }) {
           {editingItemId === foodItem.id ? (
             // rendera input-fält för att redigera maträtten
             <>
-            <label className="input-label" htmlFor="foodName">Namn på rätt</label>
+              <label className="input-label" htmlFor="foodName">Namn på rätt</label>
               <input className="dish-input"
                 type="text"
+                required
+                pattern="[A-Za-zÅÄÖåäö\s]+"
                 defaultValue={foodItem.name}
                 onChange={(e) => {
-                  foodItem.name = e.target.value;
+                  const inputValue = e.target.value;
+                  if (inputValue.match(/^[A-ZÅÄÖa-zåäö\s]+$/)) {
+                    foodItem.name = inputValue;
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (!/^[a-zåäöA-ZÅÄÖ\s]*$/g.test(e.key)) {
+                    e.preventDefault();
+                  }
                 }}
               />
               <label className="input-label" htmlFor="foodPrice">Pris</label>
               <input className="dish-input"
                 type="number"
+                required
                 label="Pris"
+                pattern="[0-9]"
                 defaultValue={foodItem.price}
                 onChange={(e) => {
                   foodItem.price = Number(e.target.value);
@@ -91,6 +118,7 @@ function Menu({ isLoggedIn }) {
                 icon={faCheck}
                 className="staff-icons"
                 onClick={() => handleSave(foodItem)}
+                type="submit"
                 title="Spara ändringar"
               />
             </>
@@ -110,19 +138,22 @@ function Menu({ isLoggedIn }) {
                   <FontAwesomeIcon
                     icon={faPen}
                     className="staff-icons"
-                    onClick={() => setEditingItemId(foodItem.id)}title="Redigera rätt" 
+                    onClick={() => setEditingItemId(foodItem.id)} title="Redigera rätt"
                   />
                 )}
                 {!isLoggedIn && (
-                  <button
-                    className="menu-btn"
-                    onClick={() => handleClick(foodItem)}
-                  >
-                    Lägg till
-                  </button>
+                  <div>
+                    <button
+                      className="menu-btn"
+                      onClick={() => handleClick(foodItem)}
+                    >
+                      Lägg till
+                    </button>
+                    <p className="added-text">Tillagd i kundkorg!</p>
+                  </div>
                 )}
                 {isLoggedIn && (
-                  <FontAwesomeIcon icon={faTrash} className="staff-icons" onClick={() => deleteDish(foodItem.id)} title="Radera rätt"/>
+                  <FontAwesomeIcon icon={faTrash} className="staff-icons" onClick={() => deleteDish(foodItem.id)} title="Radera rätt" />
                 )}
               </div>
             </>
@@ -140,7 +171,9 @@ function Menu({ isLoggedIn }) {
       </button>
     </div>
   );
-  
+
 }
+
+
 
 export default Menu;
