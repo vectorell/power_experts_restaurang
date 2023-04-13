@@ -60,7 +60,7 @@ function AddNewDish() {
         if ((name !== '') && (price !== '') && (contents !== '')) {
 
             let newDishObj = {
-                id: '',
+                id: Math.random().toString(),
                 image: '../src/components/menu-img/talian-cuisine-abstract-concept-illustration-mediterranean-cuisine-italian-re_335657-3522.avif',
                 name: name,
                 price: Number(price),
