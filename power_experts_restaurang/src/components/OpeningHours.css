@@ -6,13 +6,13 @@
 	border: 1px solid #D9D9D9;
 	border-radius: 0.3em;
 	width: 80vw;
-	max-width: 800px;
+	max-width: 500px;
 	padding:1em ;
-	margin: 0 auto 3em;
+	margin: 0 auto ;
 	font-family: Gilda Display;
 	text-align: center;
 	color:var(--offwhite);
-	background-color:var(--background-gray);
+	background-color:rgb(61, 61, 61, 0.7);
 }
 
 .opening-hours > h3{ 
@@ -30,3 +30,27 @@
 .opening-hours p:nth-child(even){
 	margin-bottom: 0.5em;
 }
+
+
+
+/* laptop, small screens */
+
+@media (min-width:769px) and (max-width:1024px){
+
+	.opening-hours{
+		position:relative;
+		top: -20em;
+		
+	}
+}
+
+/* desktop, larger screens */
+@media (min-width:1025px){
+	.opening-hours{
+		position:relative;
+		top: -20em;
+		
+	}
+
+
+}	
