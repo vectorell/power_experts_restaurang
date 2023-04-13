@@ -3,6 +3,7 @@ import { useContext } from "react"
 import { ContextProvider } from "../../App"
 
 
+
 function Menu({image, name, description, price}) {
 	const {foodItems} = useContext(ContextProvider)
 	return (

@@ -54,6 +54,11 @@ display: none;
 .cart-desktop{
 	margin-right: 1em;
 }
+.added-text {
+	visibility: hidden;
+	font-weight: bold;
+	color: green;
+}
 
 .bars{
 	color: var(--offwhite);
