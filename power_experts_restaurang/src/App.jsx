@@ -21,6 +21,8 @@ function App() {
   const [showLandingPage, setShowLandingPage] = useState(true)
   const [showVarukorg, setShowVarukorg] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
+  const [items, setItems] = useState([])
+
 
   // Globala variabler/arrayer osv
   const contextValues = {
@@ -33,6 +35,12 @@ function App() {
     setShowVarukorg,
     showMenu,
     setShowMenu,
+    items,
+    setItems
+  }
+
+  function updateFoodItems(updatedItems) {
+    setFoodItems(updatedItems);
   }
 
   return (
@@ -48,7 +56,7 @@ function App() {
       </div>
 
     <div className="main-container">
-      {showMenu && <MenuItems items={foodItems}/>}
+      {showMenu && <MenuItems items={foodItems} />}
     </div>
     </ContextProvider.Provider>
   )
