@@ -22,6 +22,8 @@ function AddNewDish() {
     const paraPriceRef = useRef(null)       // Pris
     const paraContentsRef = useRef(null)    // Innehåll
 
+    const addedPara = useRef(null)
+
     const errorMessageObj = {
         name: 'Var god fyll i maträttens namn, minst tre bokstäver.',
         price: 'Var god fyll i maträttens pris, med endast siffror',
@@ -30,29 +32,20 @@ function AddNewDish() {
 
     
     function handleSave(event) {
-        event.preventDefault()
-        // Villkor för namnvalidering
-        const nameInputTerms = inputNameRef.current.value.length > 2 && (inputNameRef.current.value.match( /^[A-Ö a-ö\z]+$/ ))
-
-        // Villkor för prisvalidering
-        const priceInputTerms = inputPriceRef.current.value > 0 && (inputPriceRef.current.value.match( /^[0-9]+$/ ))
-
-        // Villkor för innehållsvalidering
-        const contentsInputTerms = inputContentsRef.current.value.length > 2 && (inputContentsRef.current.value.match( /^[A-Ö, a-ö\z]+$/ ))
-
+        event.preventDefault()   
 
         // Valideringscheck på namn
-        nameInputTerms
+        inputNameRef.current.value.length > 2 && (inputNameRef.current.value.match( /^[A-Ö a-ö\z]+$/ ))
         ? ( inputNameRef.current.className='valid', paraNameRef.current.style.visibility = 'hidden')
         : (inputNameRef.current.className='invalid', paraNameRef.current.style.visibility = 'visible')
         
         // Valideringscheck på pris
-        priceInputTerms
+        inputPriceRef.current.value > 0 && (inputPriceRef.current.value.match( /^[0-9]+$/ ))
         ? (inputPriceRef.current.className='valid', paraPriceRef.current.style.visibility = 'hidden')
         : (inputPriceRef.current.className='invalid', paraPriceRef.current.style.visibility = 'visible')
 
         // Valideringscheck på innehåll i maträtten
-        contentsInputTerms
+        inputContentsRef.current.value.length > 2 && (inputContentsRef.current.value.match( /^[A-Ö, a-ö\z]+$/ ))
         ? (inputContentsRef.current.className='valid', paraContentsRef.current.style.visibility = 'hidden')
         : (inputContentsRef.current.className='invalid', paraContentsRef.current.style.visibility = 'visible')
 
@@ -71,9 +64,6 @@ function AddNewDish() {
             updatedFoodItems.push(newDishObj)
             dataFromParent.setItems(updatedFoodItems)
             localStorage.setItem("foodItems", JSON.stringify(updatedFoodItems));
-            
-            console.log('dataFromParent.foodItemsArray')
-            console.log(dataFromParent.foodItemsArray)
 
             // Töm inputfälten och nollställ matobjektet
             inputNameRef.current.value = ''
@@ -82,6 +72,11 @@ function AddNewDish() {
             setName('')
             setPrice('')
             setContents('')
+
+            addedPara.current.style.visibility = 'visible'
+            setTimeout(() => {
+                addedPara.current.style.visibility = 'hidden'
+            }, 2500)
         } 
     }
     
@@ -153,6 +148,7 @@ function AddNewDish() {
 
             {/* KNAPP-CONTAINER */}
                 <div className="button-div">
+                    <p className="added-dish-para" ref={addedPara} style={{visibility: "hidden"}}> Maträtt tillagd </p>
                     <button className="submit-btn" type="submit" onClick={() => navigateTo('menu')}> Till menyn </button>
                     <button className="submit-btn" type="submit" onClick={handleSave}> Lägg till rätt </button>
                 </div>
