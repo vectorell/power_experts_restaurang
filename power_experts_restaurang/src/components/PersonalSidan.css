@@ -24,6 +24,7 @@ form {
 .error{
     color: var(--offwhite);
     margin-bottom: 0;
+   height: 2em;
 }
 
 .title-page{

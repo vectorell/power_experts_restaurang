@@ -22,8 +22,8 @@ const Inloggning = () => {
   ];
 
   const errors = {
-    wrongName: "ogiltigt användarnamn",
-    wrongPass: "ogiltigt lösenord"
+    wrongName: "Vänligen fyll i ett giltigt användarnamn",
+    wrongPass: "Ogiltigt lösenord"
   };
 
   const handleSubmit = (event) => {
@@ -57,15 +57,15 @@ const Inloggning = () => {
 
   const renderForm = (
     <div className="form">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
         <div className="title-page">Personalinloggning</div>
         <div className="input-container">
           <input type="text" name="uname" required placeholder="Användernamn" className="inlogg-input" />
-         {renderErrorMessage("wrongName")} 
+        <div className="error"> {renderErrorMessage("wrongName")} </div>
         </div>
         <div className="input-container2">
           <input className="inlogg-input" type="password" name="pass" required placeholder="Lösenord" />
-          {renderErrorMessage("pass")}
+          <div className="error"> {renderErrorMessage("pass")}</div>
         </div>
           <button type="submit" > Logga in </button>
       </form>
