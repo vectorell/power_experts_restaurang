@@ -1,0 +1,43 @@
+.add-dish-form {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    background-color: var(--offwhite);
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    margin-top: 0.5em;
+    align-self: center;
+}
+
+.title-input {
+    margin-top: 1em;
+}
+
+.button-div {
+    align-self: center;
+}
+
+.submit-btn {
+    align-self: center;
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+input {
+    border: 3px solid rgba(0, 0, 0, 0);
+    padding: 0.5em 1em;
+    font-size: var(--fontSmall);
+}
+
+.invalid {
+    border: 3px solid rgb(218, 30, 30);
+}
+
+.valid {
+    border: 3px solid rgb(106, 176, 66);
+}

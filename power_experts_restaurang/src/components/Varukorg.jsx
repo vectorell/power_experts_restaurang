@@ -20,10 +20,13 @@ function Varukorg() {
     const totalSum = selectedDishes.reduce((acc, dish) => acc + dish.price, 0)
 
     // Funktion för att välja bort en rätt
-    function handleRemoveDish(index) {
-        const newSelectedDishes = [...selectedFoodItems]
-        newSelectedDishes.splice(index, 1)
-        setSelectedFoodItems(newSelectedDishes)
+    function handleRemoveDish(index, event ) {
+        if (event.key === 'Enter' || event.button === 0) {
+            const newSelectedDishes = [...selectedFoodItems]
+            newSelectedDishes.splice(index, 1)
+            setSelectedFoodItems(newSelectedDishes)
+
+        }
     }
 
     return (
@@ -40,7 +43,7 @@ function Varukorg() {
                         name={dish.name} 
                         description={dish.description} 
                         price={dish.price} 
-                        onRemove={ () => handleRemoveDish(index)}
+                        onRemove={ () => handleRemoveDish(index, event)}
                     />
                 )))}
             </div>

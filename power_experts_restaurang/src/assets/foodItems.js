@@ -1,4 +1,4 @@
-const foodItems = [
+let foodItems = [
     { id: 0, image: '../src/components/menu-img/carbonara.jpg', name: 'Pasta Carbonara', price: 179, description: 'Bacon, parmesan, ägg, olivolja, salt, peppar'},
     { id: 1, image: '../src/components/menu-img/kycklingpasta.jpg', name: 'Krämig kycklingpasta', price: 179, description: 'Kyckling, paprika, lök, grädde, cream cheese, salt, peppar, paprikapulver, basilika'},
     { id: 2, image: '../src/components/menu-img/vegetarisk-pasta.jpg', name: 'Vegetarisk pasta bolognese med blomkål', price: 179, description: 'Brun champinjon, blomkål, lök, chili, tomat, parmesan, salt, peppar'},
