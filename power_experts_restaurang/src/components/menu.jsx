@@ -43,7 +43,6 @@ function Menu({ isLoggedIn }) {
     const index = items.findIndex((item) => item.id === foodItem.id);
     const updatedItems = [...items];
     updatedItems[index] = foodItem;
-    dataFromParent.setItems(updatedItems);
 
     localStorage.setItem("foodItems", JSON.stringify(updatedItems));
 

@@ -1,28 +1,39 @@
 import React from 'react'
-import { useState } from 'react'
-import { createContext } from 'react'
-import { useContext } from 'react'
+import { useState, createContext, useContext } from 'react'
 import './App.css'
 import './base.css'
 import Header from './components/Header'
-import OpeningHours from './components/OpeningHours'
-import HeroImage from './components/HeroImage'
 import Varukorg from './components/Varukorg'
 import foodItems from './assets/foodItems'
+import LandingPage from './components/LandingPage'
+
 
 export const ContextProvider = React.createContext()
-import './App.css'
 import '../src/components/menu.css'
 import MenuItems from './components/menu'
 import drinkItems from './components/menu'
 
 function App() {
-  const [selectedFoodItems, setSelectedFoodItems] = useState([])
-  const [showLandingPage, setShowLandingPage] = useState(true)
-  const [showVarukorg, setShowVarukorg] = useState(false)
-  const [showMenu, setShowMenu] = useState(false)
-  const [items, setItems] = useState([])
+	const [selectedFoodItems, setSelectedFoodItems] = useState([])
+	const [showLandingPage, setShowLandingPage] = useState(true)
+	const [showVarukorg, setShowVarukorg] = useState(false)
+	const [showMenu, setShowMenu] = useState(false)
+	
 
+  function navigateTo(page) {
+    const pages = [
+      {name: 'landing', variable: "setShowLandingPage"},
+      {name: 'menu', variable: "setShowMenu"},
+      {name: 'varukorg', variable: "setShowVarukorg"}
+    ]
+
+    pages.forEach((p) => {
+      // om inparameter är 'menu', så blir p.name med 'menu' true.
+      let showPage = (p.name === page)
+      const setStateFunction = contextValues[p.variable]
+      setStateFunction(showPage)
+    })
+  }
 
   // Globala variabler/arrayer osv
   const contextValues = {
@@ -35,31 +46,25 @@ function App() {
     setShowVarukorg,
     showMenu,
     setShowMenu,
-    items,
-    setItems
+    navigateTo,
   }
 
-  function updateFoodItems(updatedItems) {
-    setFoodItems(updatedItems);
-  }
+	return (
+		<ContextProvider.Provider value={contextValues}>
 
-  return (
-    <ContextProvider.Provider value={contextValues}>
+		<div className="App">
+			<Header/>
+			
+			{showLandingPage && <LandingPage/>}
+			
+			{showVarukorg && <Varukorg/>}
+		</div>
 
-      <div className="App">
-        <Header/>
-        <div className='landing-page'>
-          {showLandingPage && <HeroImage/>}
-          {showLandingPage && <OpeningHours/>}
-        </div>
-        {showVarukorg && <Varukorg/>}
-      </div>
-
-    <div className="main-container">
-      {showMenu && <MenuItems items={foodItems} />}
-    </div>
-    </ContextProvider.Provider>
-  )
+		<div className="main-container">
+		{showMenu && <MenuItems items={foodItems}/>}
+		</div>
+		</ContextProvider.Provider>
+	)
 }
 
 export default App
