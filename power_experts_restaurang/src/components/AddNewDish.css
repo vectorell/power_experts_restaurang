@@ -44,3 +44,10 @@ input:focus {
 .valid {
     border: 3px solid rgb(106, 176, 66);
 }
+
+.added-dish-para {
+    color: rgb(0, 136, 0);
+    font-size: var(--fontMedium);
+    font-weight: 600;
+    text-align: center;
+}
