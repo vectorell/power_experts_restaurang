@@ -83,7 +83,7 @@ body {
 }
 
 .logo {
-	width: 15em;
+	max-width: 12em;
 	margin-top: 2em;
 	grid-column: 1/3;
 }
