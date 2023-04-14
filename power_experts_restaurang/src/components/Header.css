@@ -132,7 +132,12 @@ display: none;
 	margin: 2em 0;
 	color: var(--offwhite)
 }
-
+.change-color-cart{
+	color: var(--orange);
+}
+.text-under-cart{
+	margin-top: 0.7em;
+}
 
 /* tablet */
 @media (min-width:481px) and (max-width:768px) {

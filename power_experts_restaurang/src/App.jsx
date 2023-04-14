@@ -3,10 +3,9 @@ import { useState, createContext, useContext } from 'react'
 import './App.css'
 import './base.css'
 import Header from './components/Header'
-import OpeningHours from './components/OpeningHours'
-import HeroImage from './components/HeroImage'
 import Varukorg from './components/Varukorg'
 import foodItems from './assets/foodItems'
+import LandingPage from './components/LandingPage'
 
 
 export const ContextProvider = React.createContext()
@@ -68,21 +67,19 @@ function App() {
 	return (
 		<ContextProvider.Provider value={contextValues}>
 
-      <div className="App">
-        <Header/>
-        {showAddNewDish && <AddNewDish/>}
-        <div className='landing-page'>
-          {showLandingPage && <HeroImage/>}
-          {showLandingPage && <OpeningHours/>}
-        </div>
-        {showVarukorg && <Varukorg/>}
-      </div>
+		<div className="App">
+			<Header/>
+			{showAddNewDish && <AddNewDish/>}
+			{showLandingPage && <LandingPage/>}
+			
+			{showVarukorg && <Varukorg/>}
+		</div>
 
-    <div className="main-container">
-      {showMenu && <MenuItems items={foodItemsArray}/>}
-    </div>
-    </ContextProvider.Provider>
-  )
+		<div className="main-container">
+		{showMenu && <MenuItems items={foodItems}/>}
+		</div>
+		</ContextProvider.Provider>
+	)
 }
 
 export default App

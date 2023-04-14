@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ContextProvider } from "../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
@@ -6,7 +6,24 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 
 const LargeScreenHeader = () => {
-	const { navigateTo } = useContext(ContextProvider)
+	const { navigateTo , selectedFoodItems } = useContext(ContextProvider)
+	const [ areItemsInCart , setAreItemsInCart] = useState(false);
+
+	//dyker upp text under korgen och byts färg på korgen när beställs mat
+	const TextUnderCartShopping = () => {
+		return (<div className="text-under-cart">Beställt</div>
+		)
+	}
+	useEffect(() => {
+		if(selectedFoodItems.length > 0){
+			console.log('du har beställt');
+
+			setAreItemsInCart(true)
+		} else{
+			setAreItemsInCart(false);
+		}
+	} ,[selectedFoodItems])
+
 
 	// gå till varukorg
 	const onClickCart =() =>{
@@ -44,6 +61,8 @@ const LargeScreenHeader = () => {
 		{event.key === 'Enter' ? console.log('personal login') : null}
 	}
 
+	
+	
 
 	return(
 	<div className='header-desktop'>
@@ -56,8 +75,8 @@ const LargeScreenHeader = () => {
 					<p tabIndex={0}>0700-202020</p>
 				</li>
 			</ul>		
-			<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-desktop link fa-lg' onClick={onClickCart} onKeyDown={onKeyDownCart} aria-label='Varukorg' />
-
+			<FontAwesomeIcon icon = {faShoppingBasket} className= {setAreItemsInCart ? 'cart cart-desktop link fa-lg'  : 'cart cart-desktop link fa-lg change-color-cart'} onClick={onClickCart} onKeyDown={onKeyDownCart} aria-label='Varukorg' />
+			{areItemsInCart ? <TextUnderCartShopping/> : null }
 			</div>
 	)		
 }
