@@ -6,13 +6,16 @@ import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 
 const SmallScreenHeader =() => {
-	const { navigateTo } = useContext(ContextProvider)
+	const { navigateTo, selectedFoodItems } = useContext(ContextProvider)
 
 	const [hamburgerOpen, setHamburgerOpen] = useState(false)
 
+	const [ areItemsInCart , setAreItemsInCart] = useState(false);
+	
 // För att stänga hamburgermenyn genom att klicka utanför  
 	const ref = useRef()
 
@@ -28,6 +31,25 @@ const SmallScreenHeader =() => {
 		}
 	},[hamburgerOpen])
    
+
+	//dyker upp text under korgen och byts färg på korgen när beställs mat
+	const TextUnderCartShopping = () => {
+		return ( 
+		<FontAwesomeIcon icon = {faPlus} className="text-under-cart fa-xs"/>
+		)
+	}
+	useEffect(() => {
+		if(selectedFoodItems.length > 0){
+			console.log('du har beställt');
+
+			setAreItemsInCart(true)
+		} else{
+			setAreItemsInCart(false);
+		}
+	} ,[selectedFoodItems])
+
+
+
 	// gå till varukorg
 	const onClickCart =() =>{
 		console.log('jag klickade på varukorg');
@@ -79,9 +101,13 @@ const SmallScreenHeader =() => {
 			<div className="header-mobile">
 				<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome} onKeyDown={onKeyDownHome} className="header-logo" tabIndex={0}/>
 				
-				<FontAwesomeIcon icon = {faShoppingBasket} className='cart cart-mobile fa-lg mobile-link' onClick={onClickCart} onKeyDown={onKeyDownCart} aria-label='Varukorg' tabIndex={0}/>
+					<div className="cart-container">
+					{areItemsInCart ? <TextUnderCartShopping/> : null }	
+					<FontAwesomeIcon icon = {faShoppingBasket} className={selectedFoodItems.length > 0 ? 'cart cart-mobile link fa-lg change-color-cart'  : 'cart cart-mobile link fa-lg '} onClick={onClickCart} onKeyDown={onKeyDownCart} aria-label='Varukorg' tabIndex={0}/>
+					</div>
 
 				<FontAwesomeIcon icon = {faBars} className='bars fa-lg mobile-link' onClick={onClickToggleMainMenu} onKeyDown={onKeyDownToggleMainMenu} aria-label='Öppna menyval' tabIndex={0}/>
+				
 			</div>
 
 			<nav className = {!hamburgerOpen ? 'hamburger-overlay' : 'hamburger-overlay-open' } ref={ref}>
