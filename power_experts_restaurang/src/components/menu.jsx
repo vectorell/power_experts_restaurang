@@ -155,7 +155,7 @@ function Menu({ isLoggedIn }) {
           )}
         </div>
       ))}
-    <button className="add-dish" onClick={() => {navigateTo('newDish')}}> Lägg till en ny maträtt </button>
+    {isLoggedIn && <button className="add-dish" onClick={() => {navigateTo('newDish')}}> Lägg till en ny maträtt </button>}
 	  <button onClick={ () => { navigateTo('varukorg') }} className="btn-forward"> 
       Till varukorgen 
     </button>
