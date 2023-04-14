@@ -1,5 +1,5 @@
 import { ContextProvider } from "../App";
-import { useState } from "react"
+import { useContext, useState } from "react"
 import './PersonalSidan.css'
 
 export function HeaderPage () {
@@ -9,8 +9,10 @@ export function HeaderPage () {
 }
 
 const Inloggning = () => {
+  const dataFromParent = useContext(ContextProvider)
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const database = [
     {
@@ -53,18 +55,16 @@ const Inloggning = () => {
   const renderForm = (
     <div className="form">
       <form onSubmit={handleSubmit}>
-        <div className="title-page">Personalinloggnig</div>
+        <div className="title-page">Personalinloggning</div>
         <div className="input-container">
-          <input type="text" name="uname" required placeholder="Användernamn" />
+          <input type="text" name="uname" required placeholder="Användernamn" className="inlogg-input" />
          {renderErrorMessage("wrongName")} 
         </div>
         <div className="input-container2">
-          <input className="input-name" type="password" name="pass" required placeholder="Lösenord" />
+          <input className="inlogg-input" type="password" name="pass" required placeholder="Lösenord" />
           {renderErrorMessage("pass")}
         </div>
-        <div className="button-container">
           <button type="submit" > Logga in </button>
-        </div>
       </form>
     </div>
   );
@@ -73,7 +73,9 @@ const Inloggning = () => {
     <div className="app">
       <div >
         {isSubmitted ? (
-          <div>User is successfully logged in</div>
+          <div>
+            <p>User is successfully logged in</p>
+          </div>
         ) : (
           renderForm
         )}

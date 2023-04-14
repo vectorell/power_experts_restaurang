@@ -57,8 +57,7 @@ const LargeScreenHeader = () => {
 
 	// gå till personal login
 	const onClickLogin = () => {
-		console.log('personal login');
-		navigateTo('personal login')
+		navigateTo('inloggning')
 	}
 	const onKeyDownLogin = () => {
 		{event.key === 'Enter' ? console.log('personal login') : null}

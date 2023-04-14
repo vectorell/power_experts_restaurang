@@ -22,14 +22,16 @@ function App() {
   const [showMenu, setShowMenu] = useState(false)
   const [showAddNewDish, setShowAddNewDish] = useState(false)
   const [foodItemsArray, setFoodItemsArray] = useState(foodItems)
-  const [showInloggning, setInloggning] = useState(true)
+  const [showInloggning, setShowInloggning] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
   function navigateTo(page) {
     const pages = [
       {name: 'landing', variable: "setShowLandingPage"},
       {name: 'menu', variable: "setShowMenu"},
       {name: 'varukorg', variable: "setShowVarukorg"},
       {name: 'newDish', variable: "setShowAddNewDish"},
-      {name: 'inloggning' , variable: "setShowInloggnig"}
+      {name: 'inloggning' , variable: "setShowInloggning"}
     ]
     
     pages.forEach((p) => {
@@ -65,7 +67,9 @@ function App() {
     items,
     setItems,
     showInloggning,
-    setInloggning
+    setShowInloggning,
+    isLoggedIn,
+    setIsLoggedIn,
   }
 
 	return (
@@ -75,7 +79,7 @@ function App() {
 			<Header/>
 			{showAddNewDish && <AddNewDish/>}
 			{showLandingPage && <LandingPage/>}
-			{showInloggning&& < Inloggning/>}
+			{showInloggning && <Inloggning/>}
 			{showVarukorg && <Varukorg/>}
 		</div>
 
