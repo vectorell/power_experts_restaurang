@@ -12,7 +12,7 @@ const Inloggning = () => {
   const dataFromParent = useContext(ContextProvider)
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  // const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const database = [
     {
@@ -39,6 +39,9 @@ const Inloggning = () => {
         setErrorMessages({ name: "pass", message: errors.wrongPass });
       } else {
         setIsSubmitted(true);
+        console.log(dataFromParent.isLoggedIn)
+        dataFromParent.setIsLoggedIn((true))
+        console.log(dataFromParent.isLoggedIn)
       }
     } else {
       // Username not found
@@ -76,7 +79,9 @@ const Inloggning = () => {
           <div>
             <p>User is successfully logged in</p>
           </div>
-        ) : (
+        ) 
+        
+        : (
           renderForm
         )}
       </div>

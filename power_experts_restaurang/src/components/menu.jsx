@@ -10,7 +10,7 @@ import foodItems from "../assets/foodItems";
 // export function onClickCart() {
 //   console.log('klick')
 //   }
-function Menu({ isLoggedIn }) {
+function Menu() {
   const [editingItemId, setEditingItemId] = useState(null);
   const { selectedFoodItems, setSelectedFoodItems } = useContext(ContextProvider);
   const dataFromParent = useContext(ContextProvider)
@@ -129,14 +129,14 @@ function Menu({ isLoggedIn }) {
                 </p>
               ) : null}
               <div className="btn-div">
-                {isLoggedIn && (
+                {dataFromParent.isLoggedIn && (
                   <FontAwesomeIcon
                     icon={faPen}
                     className="staff-icons"
                     onClick={() => setEditingItemId(foodItem.id)} title="Redigera rätt"
                   />
                 )}
-                {!isLoggedIn && (
+                {!dataFromParent.isLoggedIn && (
                   <div>
                     <button
                       className="menu-btn"
@@ -147,7 +147,7 @@ function Menu({ isLoggedIn }) {
                     <p className="added-text">Tillagd i kundkorg!</p>
                   </div>
                 )}
-                {isLoggedIn && (
+                {dataFromParent.isLoggedIn && (
                   <FontAwesomeIcon icon={faTrash} className="staff-icons" onClick={() => deleteDish(foodItem.id)} title="Radera rätt" />
                 )}
               </div>
@@ -155,7 +155,7 @@ function Menu({ isLoggedIn }) {
           )}
         </div>
       ))}
-    {isLoggedIn && <button className="add-dish" onClick={() => {navigateTo('newDish')}}> Lägg till en ny maträtt </button>}
+    {dataFromParent.isLoggedIn && <button className="add-dish" onClick={() => {navigateTo('newDish')}}> Lägg till en ny maträtt </button>}
 	  <button onClick={ () => { navigateTo('varukorg') }} className="btn-forward"> 
       Till varukorgen 
     </button>
