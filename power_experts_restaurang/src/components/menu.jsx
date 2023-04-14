@@ -58,7 +58,7 @@ function Menu({ isLoggedIn }) {
 
 
   //true = staff-sidan, false =
-  isLoggedIn = true
+  isLoggedIn = false
 
   return (
 	  <div className="menu-container">
