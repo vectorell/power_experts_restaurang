@@ -3,11 +3,8 @@ import { ContextProvider } from "../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-<<<<<<< HEAD
 import Inloggning from "./PersonalSidan";
-=======
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
->>>>>>> css-base
 
 const LargeScreenHeader = () => {
 	const { navigateTo , selectedFoodItems } = useContext(ContextProvider)
