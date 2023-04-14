@@ -58,6 +58,7 @@ display: none;
 	visibility: hidden;
 	font-weight: bold;
 	color: green;
+	margin: 0.5em;
 }
 
 .bars{

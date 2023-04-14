@@ -1,10 +1,9 @@
-.form{
-    display: flex;
-    
-    justify-content: center;
-    
-}
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .form > input {
     display: flex;
     flex-direction: column;
@@ -13,7 +12,8 @@
 }
 
 .input-container input{
-    margin-top: 8em;
+    display: flex;
+    margin-top: 6em;
    
 }
 .input-container2{
@@ -21,9 +21,6 @@
     margin-bottom: 1.9em;
 }
 
-.button-container{
-    margin-left: 3.5em;
-}
 .error{
     color: var(--offwhite);
     margin-bottom: 0;
@@ -32,6 +29,9 @@
 .title-page{
     color: var(--offwhite);
     font-size: var(--fontXlarge);
-    
 }
-
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

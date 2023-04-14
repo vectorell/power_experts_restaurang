@@ -57,16 +57,14 @@ const Inloggning = () => {
       <form onSubmit={handleSubmit}>
         <div className="title-page">Personalinloggning</div>
         <div className="input-container">
-          <input type="text" name="uname" required placeholder="Användarnamn" />
+          <input type="text" name="uname" required placeholder="Användernamn" className="inlogg-input" />
          {renderErrorMessage("wrongName")} 
         </div>
         <div className="input-container2">
-          <input className="input-name" type="password" name="pass" required placeholder="Lösenord" />
+          <input className="inlogg-input" type="password" name="pass" required placeholder="Lösenord" />
           {renderErrorMessage("pass")}
         </div>
-        <div className="button-container">
           <button type="submit" > Logga in </button>
-        </div>
       </form>
     </div>
   );
