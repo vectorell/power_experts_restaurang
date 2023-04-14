@@ -69,6 +69,7 @@ const SmallScreenHeader =() => {
 	const onClickLogin = () => {
 		console.log('personal login');
 		setHamburgerOpen(!hamburgerOpen)
+		navigateTo('inloggning')
 	}
 	const onKeyDownLogin = () => {
 		{event.key === 'Enter' ? console.log('personal login') : null}
