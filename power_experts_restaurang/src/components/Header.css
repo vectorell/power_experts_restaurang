@@ -6,9 +6,9 @@
 .header-mobile{
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-end;
 	position: relative;
-	padding: 0.8em 0.3em;
+	padding: 2em 0.3em;
 	width: 100%;
 	background-color: var(--background-grey);
 }
@@ -16,6 +16,8 @@
 .header-logo{
 	width: 15%;
 	min-width: 5em;
+	position:absolute;
+	left:1em;
 	
 }
 
@@ -25,6 +27,7 @@
 
 .header-desktop{
 display: none;
+position: relative;
 }
 
 /* styling iconer */
@@ -47,13 +50,42 @@ display: none;
 }
 
 .cart-mobile{
-	position:absolute;
-	right: 3.5em;
+	position: absolute;
+	top:-0.5em;
+	right: 0.5em;
+
+	
 }
 
 .cart-desktop{
-	margin-right: 1em;
+	position:absolute;
+	top: 0.5em;
+	
 }
+.cart-container{
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		margin-right: 1em;
+		
+}
+
+.cart-container  > .change-color-cart{
+	color: var(--orange);
+}
+
+.text-under-cart{
+	margin-right: 2.5em;
+	position: absolute;
+	top:-1.25em;
+	right: -2em;
+	color: var(--orange)
+}
+
+
 .added-text {
 	visibility: hidden;
 	font-weight: bold;
@@ -132,28 +164,24 @@ display: none;
 	margin: 2em 0;
 	color: var(--offwhite)
 }
-.change-color-cart{
-	color: var(--orange);
-}
-.text-under-cart{
-	margin-top: 0.7em;
-}
+
 
 /* tablet */
 @media (min-width:481px) and (max-width:768px) {
 
-	.cart{
+	/* .cart{
 		
 		right: 4.5em;
 		
-	}
-	
+	} */
+/* 	
 	.bars{
 	margin-right: 2em;
  }
+*/
 }
-
 /* laptop, small screens */
+
 
 @media (min-width:769px) and (max-width:1024px){
 
@@ -190,6 +218,25 @@ display: none;
 	.hamburger-overlay-open{
 		display: none;
 	}
+
+	.cart-container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		padding-bottom: 3em;
+		margin-right: 1em;
+	}
+	
+	.text-under-cart{
+		margin-right: 2.5em;
+		position: absolute;
+		top:0.4em;
+		right: -2.1em;
+		color: var(--orange)
+	}
+
 }
 
 
@@ -232,4 +279,25 @@ display: none;
 		.hamburger-overlay-open{
 			display: none;
 		}
+
+		
+	.cart-container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		padding-bottom: 3em;
+		margin-right: 1em;
+	}
+	
+	.text-under-cart{
+		margin-right: 2.5em;
+		position: absolute;
+		top:0.4em;
+		right: -2.1em;
+		color: var(--orange)
+	}
+	
+	
 }
