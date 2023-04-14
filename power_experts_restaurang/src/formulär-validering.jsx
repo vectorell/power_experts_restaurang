@@ -54,7 +54,7 @@ const FirstNameForm = () => {
   );
 };
 
-const LastNameForm = () => {
+export const LastNameForm = () => {
   const [lastName, setLastName] = useState("");
   const [lastNameIsWrong, setLastNameIsWrong] = useState(false);
 
@@ -109,13 +109,6 @@ const LastNameForm = () => {
   );
 };
 
-function App() {
-  return (
-    <div>
-      <FirstNameForm />
-      <LastNameForm />
-    </div>
-  );
-}
 
-export default App;
+
+export default FirstNameForm;
