@@ -22,7 +22,7 @@ function App() {
   const [showMenu, setShowMenu] = useState(false)
   const [showAddNewDish, setShowAddNewDish] = useState(false)
   const [foodItemsArray, setFoodItemsArray] = useState(foodItems)
-
+  
   function navigateTo(page) {
     const pages = [
       {name: 'landing', variable: "setShowLandingPage"},
@@ -30,7 +30,7 @@ function App() {
       {name: 'varukorg', variable: "setShowVarukorg"},
       {name: 'newDish', variable: "setShowAddNewDish"}
     ]
-
+    
     pages.forEach((p) => {
       // om inparameter är 'menu', så blir p.name med 'menu' true.
       let showPage = (p.name === page)
@@ -38,6 +38,11 @@ function App() {
       setStateFunction(showPage)
     })
   }
+  
+  // Hämta maträtter från localStorage om det finns lagrade maträtter
+  const storedFoodItems = JSON.parse(localStorage.getItem("foodItems"));
+  // const items = storedFoodItems || foodItems;
+  const [items, setItems] = useState(storedFoodItems || foodItems)
 
   // Globala variabler/arrayer osv
   const contextValues = {
@@ -55,6 +60,9 @@ function App() {
     navigateTo,
     foodItemsArray,
     setFoodItemsArray,
+    storedFoodItems,
+    items,
+    setItems,
   }
 
 	return (
