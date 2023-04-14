@@ -6,13 +6,14 @@ import Header from './components/Header'
 import Varukorg from './components/Varukorg'
 import foodItems from './assets/foodItems'
 import LandingPage from './components/LandingPage'
-
+import Inloggning from './components/PersonalSidan'
 
 export const ContextProvider = React.createContext()
 import '../src/components/menu.css'
 import MenuItems from './components/menu'
 import drinkItems from './components/menu'
 import AddNewDish from './components/AddNewDish'
+
 
 function App() {
   const [selectedFoodItems, setSelectedFoodItems] = useState([])
@@ -21,13 +22,14 @@ function App() {
   const [showMenu, setShowMenu] = useState(false)
   const [showAddNewDish, setShowAddNewDish] = useState(false)
   const [foodItemsArray, setFoodItemsArray] = useState(foodItems)
-  
+  const [showInloggning, setInloggning] = useState(true)
   function navigateTo(page) {
     const pages = [
       {name: 'landing', variable: "setShowLandingPage"},
       {name: 'menu', variable: "setShowMenu"},
       {name: 'varukorg', variable: "setShowVarukorg"},
-      {name: 'newDish', variable: "setShowAddNewDish"}
+      {name: 'newDish', variable: "setShowAddNewDish"},
+      {name: 'inloggning' , variable: "setShowInloggnig"}
     ]
     
     pages.forEach((p) => {
@@ -62,6 +64,8 @@ function App() {
     storedFoodItems,
     items,
     setItems,
+    showInloggning,
+    setInloggning
   }
 
 	return (
@@ -71,7 +75,7 @@ function App() {
 			<Header/>
 			{showAddNewDish && <AddNewDish/>}
 			{showLandingPage && <LandingPage/>}
-			
+			{showInloggning&& < Inloggning/>}
 			{showVarukorg && <Varukorg/>}
 		</div>
 

@@ -3,7 +3,7 @@ import { ContextProvider } from "../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-
+import Inloggning from "./PersonalSidan";
 
 const LargeScreenHeader = () => {
 	const { navigateTo , selectedFoodItems } = useContext(ContextProvider)
@@ -56,6 +56,7 @@ const LargeScreenHeader = () => {
 	// gå till personal login
 	const onClickLogin = () => {
 		console.log('personal login');
+		navigateTo('personal login')
 	}
 	const onKeyDownLogin = () => {
 		{event.key === 'Enter' ? console.log('personal login') : null}
