@@ -15,12 +15,13 @@ function Menu({ isLoggedIn }) {
   const { selectedFoodItems, setSelectedFoodItems } = useContext(ContextProvider);
   const dataFromParent = useContext(ContextProvider)
   const { navigateTo } = useContext(ContextProvider)
+  const {items} = useContext(ContextProvider)
 
   const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems);
 
-  // Hämta maträtter från localStorage om det finns lagrade maträtter
-  const storedFoodItems = JSON.parse(localStorage.getItem("foodItems"));
-  const items = storedFoodItems || foodItems;
+  // // Hämta maträtter från localStorage om det finns lagrade maträtter
+  // const storedFoodItems = JSON.parse(localStorage.getItem("foodItems"));
+  // const items = storedFoodItems || foodItems;
 
   function handleClick(foodItem) {
     const selectedFoodItem = items.find((item) => item.id === foodItem.id);
@@ -154,6 +155,7 @@ function Menu({ isLoggedIn }) {
           )}
         </div>
       ))}
+    {isLoggedIn && <button className="add-dish" onClick={() => {navigateTo('newDish')}}> Lägg till en ny maträtt </button>}
 	  <button onClick={ () => { navigateTo('varukorg') }} className="btn-forward"> 
       Till varukorgen 
     </button>

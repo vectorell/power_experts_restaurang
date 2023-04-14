@@ -1,0 +1,37 @@
+.form{
+    display: flex;
+    
+    justify-content: center;
+    
+}
+
+.form > input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.input-container input{
+    margin-top: 8em;
+   
+}
+.input-container2{
+    margin-top: 1.8em;
+    margin-bottom: 1.9em;
+}
+
+.button-container{
+    margin-left: 3.5em;
+}
+.error{
+    color: var(--offwhite);
+    margin-bottom: 0;
+}
+
+.title-page{
+    color: var(--offwhite);
+    font-size: var(--fontXlarge);
+    
+}
+
