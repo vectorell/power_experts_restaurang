@@ -8,7 +8,7 @@ export function HeaderPage () {
     );
 }
 
-const Inloggning = () => {
+/*const Inloggning = () => {
   const dataFromParent = useContext(ContextProvider)
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -89,5 +89,104 @@ const Inloggning = () => {
   );
 };
 
-export default Inloggning;
+export default Inloggning;*/
+
+
+const Inloggning = () => {
+  const [errorMessages, setErrorMessages] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const database = [
+    {
+      username: "mums",
+      password: "mums",
+    },
+  ];
+
+  const errors = {
+    wrongName: "ogiltigt användarnamn",
+    wrongPass: "ogiltigt lösenord",
+    emptyField: "Fältet är tomt",
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const { uname, pass } = event.target.elements;
+
+    const validUname = uname.value.trim() !== "";
+    const validPass = pass.value.trim() !== "";
+
+    if (!validUname && !validPass) {
+      setErrorMessages({
+        name: "uname",
+        message: errors.emptyField,
+      });
+    } else if (!validUname || !validPass) {
+      setErrorMessages({
+        name: !validUname ? "wrongName" : "pass",
+        message: !validUname ? errors.wrongName : errors.wrongPass,
+      });
+    } else {
+      const userData = database.find((user) => user.username === uname.value);
+
+      if (userData) {
+        if (userData.password !== pass.value) {
+          // Invalid password
+          setErrorMessages({ name: "pass", message: errors.wrongPass });
+        } else {
+          setIsSubmitted(true);
+        }
+      } else {
+        // Username not found
+        setErrorMessages({ name: "wrongName", message: errors.wrongName });
+      }
+    }
+  };
+
+  const renderErrorMessage = (name) =>
+  name === errorMessages?.name && (
+    <div className="error">{errorMessages.message}</div>
+  );
+
+const renderForm = (
+  <div className="form">
+    <form onSubmit={handleSubmit}>
+      <div className="input-container">
+        <input
+          type="text"
+          name="uname"
+          placeholder="Användernamn"
+          onBlur={() => setErrorMessages({})}
+        />
+        {renderErrorMessage("uname")}
+        {renderErrorMessage("wrongName")}
+      </div>
+      <div className="input-container2">
+        <input
+          className="input-name"
+          type="password"
+          name="pass"
+          placeholder="Lösenord"
+          onBlur={() => setErrorMessages({})}
+        />
+        {renderErrorMessage("pass")}
+      </div>
+      <div className="button-container">
+        <button type="submit">Logga in</button>
+      </div>
+    </form>
+  </div>
+);
+
+
+  return (
+    <div className="app">
+      <div>{isSubmitted ? <div>User is successfully logged in</div> : renderForm}</div>
+    </div>
+  );
+};
+
+export default Inloggning
+
 
