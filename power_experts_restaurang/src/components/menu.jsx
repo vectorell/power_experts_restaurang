@@ -116,6 +116,7 @@ function Menu() {
                 onClick={() => handleSave(foodItem)}
                 type="submit"
                 title="Spara ändringar"
+                aria-label= 'Spara ändringar'
               />
             </>
           ) : (
@@ -135,6 +136,7 @@ function Menu() {
                     icon={faPen}
                     className="staff-icons"
                     onClick={() => setEditingItemId(foodItem.id)} title="Redigera rätt"
+                    aria-label='Redigera rätt'
                   />
                 )}
                 {!dataFromParent.isLoggedIn && (
@@ -149,7 +151,8 @@ function Menu() {
                   </div>
                 )}
                 {dataFromParent.isLoggedIn && (
-                  <FontAwesomeIcon icon={faTrash} className="staff-icons" onClick={() => deleteDish(foodItem.id)} title="Radera rätt" />
+                  <FontAwesomeIcon icon={faTrash} className="staff-icons" onClick={() => deleteDish(foodItem.id)} title="Radera rätt" 
+                  aria-label='Radera rätt'/>
                 )}
               </div>
             </>
