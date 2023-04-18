@@ -1,4 +1,4 @@
-import { ContextProvider } from "../App";
+import { ContextProvider } from "../../App";
 import { useContext, useState } from "react"
 import './PersonalSidan.css'
 import { useRef } from "react";
@@ -109,5 +109,3 @@ const Inloggning = () => {
 };
 
 export default Inloggning;
-
-

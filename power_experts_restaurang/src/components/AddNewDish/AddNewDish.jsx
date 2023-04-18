@@ -1,6 +1,6 @@
 import './AddNewDish.css'
 import { useContext, useState, useRef } from 'react'
-import { ContextProvider } from '../App'
+import { ContextProvider } from '../../App'
 
 function AddNewDish() {
     // Inhämtning context

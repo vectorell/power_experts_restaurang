@@ -1,5 +1,5 @@
 import './Varukorg.css'
-import { ContextProvider } from '../App'
+import { ContextProvider } from '../../App'
 import { useContext } from 'react'
 
 function Dish({ name, description, price, onRemove }) {

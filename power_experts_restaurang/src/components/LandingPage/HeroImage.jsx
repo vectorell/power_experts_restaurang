@@ -1,6 +1,6 @@
 import './HeroImage.css'
 import { useContext, useState } from 'react'
-import { ContextProvider } from '../App'
+import { ContextProvider } from '../../App'
 
 
 const HeroImage = () => {
