@@ -24,15 +24,38 @@ form {
 .error{
     color: var(--offwhite);
     margin-bottom: 0;
-   height: 2em;
+    padding:0.2em;
+    height: 2em; 
+    width: 15em;
+    overflow-wrap: break-word;
 }
 
 .title-page{
     color: var(--offwhite);
-    font-size: var(--fontXlarge);
+    font-size: var(--fontLarge);
+    font-weight: 500;
 }
 .button-container {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.valid-form{
+   border-color: rgb(4, 161, 4);
+
+}
+
+.login-success {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: var(--offwhite);
+    font-size: var(--fontLarge);
+}
+
+.app {
+    margin: 0 auto;
 }

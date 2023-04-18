@@ -1,14 +1,15 @@
 import { useContext, useEffect, useState } from "react";
-import { ContextProvider } from "../App";
+import { ContextProvider } from "../../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import Inloggning from "./PersonalSidan";
+import Inloggning from "../PersonalSidan";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const LargeScreenHeader = () => {
 	const { navigateTo , selectedFoodItems } = useContext(ContextProvider)
 	const [ areItemsInCart , setAreItemsInCart] = useState(false);
+	const dataFromParent = useContext(ContextProvider)
 
 	//dyker upp text under korgen och byts färg på korgen när beställs mat
 	const TextUnderCartShopping = () => {
@@ -70,8 +71,19 @@ const LargeScreenHeader = () => {
 	<div className='header-desktop'>
 		<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome} onKeyDown={onKeyDownHome} className="header-logo" tabIndex={0}/>
 		<ul className="main-menu  desktop-main-menu" >
-			<li onClick ={onClickMenu} onKeyDown={onKeyDownMenu} className='link' tabIndex={0}> Till menyn</li>
-			<li onClick={onClickLogin} onKeyDown={onKeyDownLogin} className="link" tabIndex={0}>Personal</li>
+
+			<li onClick={onClickMenu} onKeyDown={onKeyDownMenu} className='link' tabIndex={0}> Till menyn</li>
+						{dataFromParent.isLoggedIn ? (
+							<li onClick={() => {
+								dataFromParent.setIsLoggedIn((false))
+								dataFromParent.navigateTo('landing')
+							}} className="link" tabIndex={0}>Logga ut</li>
+						) : (
+							<li onClick={onClickLogin} onKeyDown={onKeyDownLogin} className="link" tabIndex={0}>Personal</li>
+						)}
+
+
+			
 			<li className="phone">
 					<FontAwesomeIcon icon = {faPhone} className="phone-icon"/>
 					<p tabIndex={0}>0700-202020</p>
