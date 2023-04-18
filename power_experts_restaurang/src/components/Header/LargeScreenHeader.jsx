@@ -5,6 +5,7 @@ import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import Inloggning from "../PersonalSidan/PersonalSidan";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import logoNoBackground from "../images/logo-no-background 1.png"
 
 const LargeScreenHeader = () => {
 	const { navigateTo , selectedFoodItems } = useContext(ContextProvider)
@@ -69,7 +70,7 @@ const LargeScreenHeader = () => {
 
 	return(
 	<div className='header-desktop'>
-		<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome} onKeyDown={onKeyDownHome} className="header-logo" tabIndex={0}/>
+		<img src={logoNoBackground} alt="Företagslogga Feast & Fare" onClick={onClickHome} onKeyDown={onKeyDownHome} className="header-logo" tabIndex={0}/>
 		<ul className="main-menu  desktop-main-menu" >
 
 			<li onClick={onClickMenu} onKeyDown={onKeyDownMenu} className='link' tabIndex={0}> Till menyn</li>

@@ -1,6 +1,7 @@
 import './AddNewDish.css'
 import { useContext, useState, useRef } from 'react'
 import { ContextProvider } from '../../App'
+import newDishImg from "../menu-img/talian-cuisine-abstract-concept-illustration-mediterranean-cuisine-italian-re_335657-3522.jpg"
 
 function AddNewDish() {
     // Inhämtning context
@@ -54,7 +55,7 @@ function AddNewDish() {
 
             let newDishObj = {
                 id: Math.random().toString(),
-                image: '../src/components/menu-img/talian-cuisine-abstract-concept-illustration-mediterranean-cuisine-italian-re_335657-3522.avif',
+                image: newDishImg,
                 name: name,
                 price: Number(price),
                 description: contents,
@@ -116,7 +117,7 @@ function AddNewDish() {
 
             {/* INPUTFÄLT FÖR BILD */}
             <h2 className="title-input"> Bild </h2>
-            <input className='input-picture' type="text" placeholder='talian-cuisine-abstract-concept-illustration-mediterranean-cuisine-italian-re_335657-3522.avif'/>
+            <input className='input-picture' type="text" placeholder='talian-cuisine-abstract-concept-illustration-mediterranean-cuisine-italian-re_335657-3522.jpg'/>
 
             {/* INPUTFÄLT FÖR NAMN PÅ MATRÄTT */}
             <h2 className="title-input"> Namn på maträtt </h2>

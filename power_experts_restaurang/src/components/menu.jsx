@@ -5,6 +5,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import foodItems from "../assets/foodItems";
+import logo from "../components/menu-img/logo.png"
 
 
 // export function onClickCart() {
@@ -62,7 +63,7 @@ function Menu() {
 
   return (
 	  <div className="menu-container">
-	  <img src="../src/components/menu-img/logo.png" alt="loggo" className="logo" onClick={() => {
+	  <img src={logo} alt="loggo" className="logo" onClick={() => {
 				navigateTo('landing')
 	  }}/>
       <h1 className="menu-header">Meny</h1>

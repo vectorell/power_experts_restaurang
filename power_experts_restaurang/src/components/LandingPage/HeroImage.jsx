@@ -1,4 +1,5 @@
 import './HeroImage.css'
+import pexels from "../images/pexels-volkan-vardar-3887985.jpg"
 import { useContext, useState } from 'react'
 import { ContextProvider } from '../../App'
 
@@ -9,7 +10,7 @@ const HeroImage = () => {
 	return(
 		
 		<section className= 'hero-image-container'>
-			<img src="src\components\images\pexels-volkan-vardar-3887985.jpg" alt="Interiörbild från restaurangen" className='hero-image'  />
+			<img src={pexels} alt="Interiörbild från restaurangen" className='hero-image'  />
 			<button onClick={ () => {
 				navigateTo('menu')
 				} } className='menu-button' >Till menyn</button>

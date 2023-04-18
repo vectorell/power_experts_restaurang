@@ -8,6 +8,7 @@ import foodItems from './assets/foodItems'
 import LandingPage from './components/LandingPage/LandingPage'
 import Inloggning from './components/PersonalSidan/PersonalSidan'
 
+
 export const ContextProvider = React.createContext()
 import '../src/components/menu.css'
 import MenuItems from './components/menu'

@@ -7,6 +7,7 @@ import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import logoNoBackground from "../images/logo-no-background 1.png"
 
 
 const SmallScreenHeader = () => {
@@ -102,7 +103,7 @@ const SmallScreenHeader = () => {
 	return (
 		<div>
 			<div className="header-mobile">
-				<img src="src\components\images\logo-no-background 1.png" alt="Företagslogga Feast & Fare" onClick={onClickHome} onKeyDown={onKeyDownHome} className="header-logo" tabIndex={0} />
+				<img src={logoNoBackground} alt="Företagslogga Feast & Fare" onClick={onClickHome} onKeyDown={onKeyDownHome} className="header-logo" tabIndex={0} />
 
 				<div className="cart-container">
 					{areItemsInCart ? <TextUnderCartShopping /> : null}
