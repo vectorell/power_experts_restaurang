@@ -12,9 +12,10 @@
 
 }
 
-.menu-button{
+/* .menu-button{
 	position: absolute;
-}
+	top: 13em;
+} */
 
 .hero-image{
 	width:100%;
@@ -22,4 +23,31 @@
 	border-radius: 0.3em;
 }
 
+/* tablet */
+@media (min-width:481px) and (max-width:768px) {
+	.menu-button{
+		position: absolute;
+	}
+}
 
+/* laptop, small screens */
+
+
+@media (min-width:769px) and (max-width:1024px){
+
+	.header-mobile{
+		display: none;
+
+	}
+
+}
+
+/* desktop, larger screens */
+@media (min-width:1025px){
+	.menu-button{
+		position: absolute;
+		
+
+	}
+
+}
