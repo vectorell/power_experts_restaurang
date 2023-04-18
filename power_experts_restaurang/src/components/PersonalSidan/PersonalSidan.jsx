@@ -24,6 +24,8 @@ const Inloggning = () => {
   ];
 
   const errors = {
+    noName: 'Vänligen fyll i ditt användarnamn',
+    noPass: 'Vänligen fyll i ditt lösenord',
     wrongPass: "Ogiltigt lösenord eller användarnamn, vänligen kontrollera stavningen."
   };
 
@@ -78,10 +80,10 @@ const Inloggning = () => {
         <form onSubmit={handleSubmit} noValidate>
           <h1 className="title-page">Personalinloggning</h1>
           <div className="input-container">
-            <input ref={nameForm} onChange={(event) => { handleInputChange(event) }} type="email" name="uname" required placeholder="Användernamn" className="inlogg-input" />
+            <input ref={nameForm} onChange={(event) => { handleInputChange(event) }} type="email" name="uname" required placeholder="Användernamn" className="inlogg-input" aria-label='Skriv in ditt användarnamn'/>
           </div>
           <div className="input-container2">
-            <input className="inlogg-input" type="password" name="pass" required placeholder="Lösenord" />
+            <input className="inlogg-input" type="password" name="pass" required placeholder="Lösenord" aria-label='Skriv in ditt lösenord' />
             {renderErrorMessage("pass")}
           </div>
           <button type="submit"> Logga in </button>

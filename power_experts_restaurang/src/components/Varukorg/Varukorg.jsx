@@ -6,7 +6,6 @@ function Varukorg() {
     
     const {selectedFoodItems} = useContext(ContextProvider) 
     const {setSelectedFoodItems} = useContext(ContextProvider)
-    const dataFromParent = useContext(ContextProvider)
     const {navigateTo} = useContext(ContextProvider)
     const [selectedDishes, setSelectedDishes] = useState(selectedFoodItems)
 
