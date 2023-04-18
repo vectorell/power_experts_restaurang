@@ -12,10 +12,9 @@
 
 }
 
-/* .menu-button{
-	position: absolute;
-	top: 13em;
-} */
+.menu-button{
+	margin-top: 1em;
+}
 
 .hero-image{
 	width:100%;
@@ -37,16 +36,20 @@
 
 	.header-mobile{
 		display: none;
-
 	}
 
+	.menu-button{
+		position: absolute;
+		top:17em;
+
+}
 }
 
 /* desktop, larger screens */
 @media (min-width:1025px){
 	.menu-button{
 		position: absolute;
-		
+		top:20em;
 
 	}
 
