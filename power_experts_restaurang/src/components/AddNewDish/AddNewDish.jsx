@@ -117,11 +117,11 @@ function AddNewDish() {
 
             {/* INPUTFÄLT FÖR BILD */}
             <h2 className="title-input"> Bild </h2>
-            <input className='input-picture' type="text" placeholder='talian-cuisine-abstract-concept-illustration-mediterranean-cuisine-italian-re_335657-3522.jpg'/>
+            <input className='input-picture input-class' type="text" placeholder='talian-cuisine-abstract-concept-illustration-mediterranean-cuisine-italian-re_335657-3522.jpg'/>
 
             {/* INPUTFÄLT FÖR NAMN PÅ MATRÄTT */}
             <h2 className="title-input"> Namn på maträtt </h2>
-            <input className="input-name" ref={inputNameRef} type="text" required 
+            <input className="input-name input-class" ref={inputNameRef} type="text" required 
             onChange={(event) => { 
                 setName(event.target.value) 
                 handleInputChange(event)
@@ -131,7 +131,7 @@ function AddNewDish() {
 
             {/* INPUTFÄLT FÖR PRIS */}
             <h2 className="title-input"> Pris </h2>
-            <input className="input-price" ref={inputPriceRef} type="text" required pattern="[0-9]"
+            <input className="input-price input-class" ref={inputPriceRef} type="text" required pattern="[0-9]"
             onChange={(event) => {
                 setPrice(event.target.value)
                 handleInputChange(event)
@@ -140,7 +140,7 @@ function AddNewDish() {
 
             {/* INPUTFÄLT FÖR INNEHÅLL */}
             <h2 className="title-input"> Innehåll </h2>
-            <input className="input-contents" ref={inputContentsRef} type="text" required
+            <input className="input-contents input-class" ref={inputContentsRef} type="text" required
             onChange={(event) => { 
                 setContents(event.target.value) 
                 handleInputChange(event)

@@ -28,12 +28,12 @@
     margin-left: 1em;
 }
 
-input {
+.input-class {
     border: 3px solid rgba(0, 0, 0, 0);
     padding: 0.5em 1em;
     font-size: var(--fontSmall);
 }
-input:focus {
+.input-class:focus {
     outline: none;
 }
 
