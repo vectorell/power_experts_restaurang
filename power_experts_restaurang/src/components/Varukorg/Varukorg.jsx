@@ -1,4 +1,4 @@
-import { ContextProvider } from "../App"
+import { ContextProvider } from "../../App"
 import { useContext, useState, useEffect } from "react"
 import Dish from "./Dish"
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const FirstNameForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -12,14 +12,14 @@ const FirstNameForm = () => {
       return false 
     }
     if (totalName.includes(" ")) {
-      return false , 
+      return false 
     }
 
     let allowedAlphabet = " abcdefghijklmnopqrstuvwxyzåäö";
     for (let i = 0; i < totalName.length; i++) {
       let character = totalName[i].toLowerCase();
       if (!allowedAlphabet.includes(character)) {
-        return false , 
+        return false
       }
     }
     return true;

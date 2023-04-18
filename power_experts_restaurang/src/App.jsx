@@ -3,16 +3,16 @@ import { useState, createContext, useContext } from 'react'
 import './App.css'
 import './base.css'
 import Header from './components/Header/Header'
-import Varukorg from './components/Varukorg'
+import Varukorg from './components/Varukorg/Varukorg'
 import foodItems from './assets/foodItems'
-import LandingPage from './components/LandingPage'
-import Inloggning from './components/PersonalSidan'
+import LandingPage from './components/LandingPage/LandingPage'
+import Inloggning from './components/PersonalSidan/PersonalSidan'
 
 export const ContextProvider = React.createContext()
 import '../src/components/menu.css'
 import MenuItems from './components/menu'
 import drinkItems from './components/menu'
-import AddNewDish from './components/AddNewDish'
+import AddNewDish from './components/AddNewDish/AddNewDish'
 
 
 function App() {
