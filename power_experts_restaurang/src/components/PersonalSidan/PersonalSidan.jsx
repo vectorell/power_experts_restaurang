@@ -84,7 +84,8 @@ const Inloggning = () => {
           </div>
           <div className="input-container2">
             <input className="inlogg-input" type="password" name="pass" required placeholder="Lösenord" aria-label='Skriv in ditt lösenord' />
-            {renderErrorMessage("pass")}
+            <div className='error'> {renderErrorMessage("pass")}
+           </div>
           </div>
           <button type="submit"> Logga in </button>
         </form>
