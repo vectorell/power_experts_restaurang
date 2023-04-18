@@ -8,7 +8,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-
 .title {
     margin-top: 0.5em;
     align-self: center;
@@ -46,7 +45,7 @@
 }
 
 .added-dish-para {
-    color: rgb(0, 136, 0);
+    color: rgb(106, 176, 66);
     font-size: var(--fontMedium);
     font-weight: 600;
     text-align: center;

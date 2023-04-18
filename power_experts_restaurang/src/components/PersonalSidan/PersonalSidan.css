@@ -10,7 +10,12 @@ form {
     justify-content: space-between;
     
 }
+.inlogg-input {
+    border: 3px solid rgba(0,0,0,0);
+    padding: 0.5em 1em;
+    font-size: var(--fontSmall);
 
+}
 .input-container input{
     display: flex;
     margin-top: 6em;
@@ -43,6 +48,8 @@ form {
 
 .valid-form{
    border-color: rgb(4, 161, 4);
+   padding: 0.5em 1em;
+   font-size: var(--fontSmall);
 
 }
 

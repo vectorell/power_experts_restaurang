@@ -68,7 +68,7 @@ const Inloggning = () => {
         input.className = "valid-form"
       } else {
         renderErrorMessage('pass')
-        input.className = ''
+        input.className = 'inlogg-input'
       }
     }
 
