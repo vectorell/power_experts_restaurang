@@ -38,10 +38,14 @@
 
 .invalid {
     border: 3px solid rgb(218, 30, 30);
+    padding: 0.5em 1em;
+    font-size: var(--fontSmall);
 }
 
 .valid {
     border: 3px solid rgb(106, 176, 66);
+    padding: 0.5em 1em;
+    font-size: var(--fontSmall);
 }
 
 .added-dish-para {
