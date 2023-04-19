@@ -87,12 +87,12 @@ const LargeScreenHeader = () => {
 			
 			<li className="phone">
 					<FontAwesomeIcon icon = {faPhone} className="phone-icon"/>
-					<p tabIndex={0}>0700-202020</p>
+					<p>0700-202020</p>
 			</li>
 		</ul>
 				<div className="cart-container">	
 					{areItemsInCart ? <TextUnderCartShopping/> : null }	
-					<FontAwesomeIcon icon = {faShoppingBasket} className= {selectedFoodItems.length > 0 ? 'cart cart-desktop link fa-lg change-color-cart'  : 'cart cart-desktop link fa-lg '} onClick={onClickCart} onKeyDown={onKeyDownCart} aria-label='Varukorg' />
+					<FontAwesomeIcon icon = {faShoppingBasket} className= {selectedFoodItems.length > 0 ? 'cart cart-desktop link fa-lg change-color-cart'  : 'cart cart-desktop link fa-lg '} onClick={onClickCart} onKeyDown={onKeyDownCart} aria-label='Varukorg' tabIndex={0}/>
 				</div>
 	</div>
 	)		

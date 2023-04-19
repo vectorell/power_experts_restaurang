@@ -134,7 +134,7 @@ const SmallScreenHeader = () => {
 					
 					<li className="phone">
 						<FontAwesomeIcon icon={faPhone} className="phone-icon " />
-						<p tabIndex={0}>0700-202020</p>
+						<p>0700-202020</p>
 					</li>
 				</ul>
 			</nav>
