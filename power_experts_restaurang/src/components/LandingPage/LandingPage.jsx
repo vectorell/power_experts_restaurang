@@ -1,6 +1,6 @@
 import OpeningHours from "./OpeningHours"
 import HeroImage from "./HeroImage"
-
+import './LandingPage.css'
 
 const LandingPage = () => {
 
